@@ -1,0 +1,41 @@
+CREATE TABLE IF NOT EXISTS `jobs` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `closure` TEXT,
+  `params` TEXT,
+  `attempts` INTEGER DEFAULT 0,
+  `is_complete` INTEGER DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `name` TEXT
+);
+
+CREATE TABLE IF NOT EXISTS `orders` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `quantity` INTEGER,
+  `is_confirmed` INTEGER DEFAULT 0,
+  `ordered_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  `notes` TEXT,
+  `delivery_instructions` TEXT,
+  `user_id` INTEGER,
+  `product_id` INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `name` TEXT,
+  `description` TEXT
+);
+
+CREATE TABLE IF NOT EXISTS `profiles` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `user_id` INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `name` TEXT,
+  `email` TEXT,
+  `password` TEXT
+);

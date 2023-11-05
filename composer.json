@@ -1,0 +1,78 @@
+ {
+    "name": "omegacms/omega",
+    "type": "project",
+    "description": "The example application for the Omega framework.",
+    "homepage": "https://omegacms.github.io",
+    "license": "GPL-3.0",
+    "authors": [
+         {
+             "name": "Adriano Giovannini",
+             "email": "omegacms@outlook.com",
+             "role": "Developer"
+         }
+     ],
+    "keywords": [ "omegacms", "framework" ],
+    "require": {
+         "php": ">=8.2",
+         "filp/whoops": "^2.1",
+         "league/flysystem": "^3.12",
+         "monolog/monolog": "^3.3",
+         "opis/closure": "^3.6",
+         "symfony/console": "^5.1",
+         "vlucas/phpdotenv": "^5.2",
+         "omegacms/application": "^1.0.0",
+         "omegacms/cache": "^1.0.0",
+         "omegacms/commands": "^1.0.0",
+         "omegacms/config": "^1.0.0",
+         "omegacms/container": "^1.0.0",
+         "omegacms/database": "^1.0.0",
+         "omegacms/exceptions": "^1.0.0",
+         "omegacms/filesystem": "^1.0.0",
+         "omegacms/helpers": "^1.0.0",
+         "omegacms/http": "^1.0.0",
+         "omegacms/logging": "^1.0.0",
+         "omegacms/mail": "^1.0.0",
+         "omegacms/model": "^1.0.0",
+         "omegacms/postmark": "^1.0.0",
+         "omegacms/querybuilder": "^1.0.0",
+         "omegacms/queue": "^1.0.0",
+         "omegacms/renderer": "^1.0.0",
+         "omegacms/routing": "^1.0.0",
+         "omegacms/service-provider": "^1.0.0",
+         "omegacms/session": "^1.0.0",
+         "omegacms/testing": "^1.0.0",
+         "omegacms/validation": "^1.0.0",
+         "omegacms/view": "^1.0.0"
+     },
+    "require-dev": {
+         "phpunit/phpunit": "^9.5",
+         "symfony/panther": "^0.9.0",
+         "dbrekelmans/bdi": "^0.3.0",
+         "symfony/process": "^5.2"
+     },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "serve": "php console serve",
+        "test": "vendor/bin/phpunit",
+        "post-root-package-install": [
+            "php -r \"if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') { if (!file_exists('.env')) { copy('.env.example', '.env'); } } else { if (!file_exists('.env')) { exec('cp .env.example .env'); } }\""
+        ]
+    },
+    "config": {
+        "process-timeout": 300,
+        "optimize-autoloader": false,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
