@@ -68,7 +68,7 @@
         ]
     },
     "config": {
-        "process-timeout": 300,
+        "process-timeout": 500,
         "optimize-autoloader": false,
         "preferred-install": "dist",
         "sort-packages": true
