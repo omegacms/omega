@@ -65,7 +65,7 @@
         "serve": "php console serve",
         "test": "vendor/bin/phpunit",
         "post-install-cmd": [
-          "php console configure:env"
+          "php console configure:env && echo $2"
         ]
     },
     "config": {
