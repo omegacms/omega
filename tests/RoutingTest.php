@@ -1,5 +1,9 @@
 <?php
 
+declare( strict_types = 1 );
+
+namespace Tests;
+
 use Omega\Application\Application;
 use Omega\Helpers\Security;
 use Omega\Testing\TestCase;
