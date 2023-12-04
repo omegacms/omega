@@ -63,7 +63,7 @@
     },
     "scripts": {
         "serve": "php console serve",
-        "test": "vendor/bin/phpunit",
+        "test": "vendor/bin/phpunit --verbose",
         "post-update-cmd": [
           "php console configure:env && echo $2"
         ]
