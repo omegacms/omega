@@ -3,3 +3,5 @@ vendor/
 .idea/
 .vscode/
 composer.lock
+bin/
+bin/download.sh
