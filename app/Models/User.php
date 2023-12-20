@@ -22,7 +22,7 @@ namespace App\Models;
  * @use
  */
 use Omega\Database\TableName;
-use Omega\Model\AbstractModel;
+use Omega\Database\Model\AbstractModel;
 use Omega\Database\Relationship;
 
 /**
