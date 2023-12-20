@@ -35,7 +35,6 @@
          "omegacms/mail": "^1.0.0",
          "omegacms/model": "^1.0.0",
          "omegacms/postmark": "^1.0.0",
-         "omegacms/querybuilder": "^1.0.0",
          "omegacms/queue": "^1.0.0",
          "omegacms/renderer": "^1.0.0",
          "omegacms/routing": "^1.0.0",
