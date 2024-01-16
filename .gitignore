@@ -4,5 +4,3 @@ vendor/
 .vscode/
 .phpdoc/
 composer.lock
-bin/download.sh
-phpDocumentor.phar
