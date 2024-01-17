@@ -29,8 +29,6 @@
          "omegacms/helpers": "^1.0.0",
          "omegacms/http": "^1.0.0",
          "omegacms/logging": "^1.0.0",
-         "omegacms/mail": "^1.0.0",
-         "omegacms/postmark": "^1.0.0",
          "omegacms/queue": "^1.0.0",
          "omegacms/renderer": "^1.0.0",
          "omegacms/routing": "^1.0.0",
