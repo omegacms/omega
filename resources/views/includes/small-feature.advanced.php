@@ -12,7 +12,7 @@
                 @if(isset($_SESSION['user_id']))
                     <li><a class="underline" href="/log-out">Log out</a></li>
                 @endif
-                @if(!isset($_SESSION['Fw_user_id']))
+                @if(!isset($_SESSION['user_id']))
                     <li><a class="underline" href="/register">Register</a></li>
                 @endif
             </ol>
