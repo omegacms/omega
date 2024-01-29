@@ -56,6 +56,7 @@
     },
     "scripts": {
         "serve": "php console serve",
+        "migrate": "php console migrate --fresh",
         "test": "vendor/bin/phpunit --verbose"
     },
     "config": {
