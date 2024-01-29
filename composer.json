@@ -56,10 +56,7 @@
     },
     "scripts": {
         "serve": "php console serve",
-        "test": "vendor/bin/phpunit --verbose",
-        "post-update-cmd": [
-          "php console configure:env"
-        ]
+        "test": "vendor/bin/phpunit --verbose"
     },
     "config": {
         "process-timeout": 500,
