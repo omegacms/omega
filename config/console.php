@@ -16,7 +16,6 @@ declare( strict_types = 1 );
 /**
  * @use
  */
-use Omega\Environment\EnvironmentCommand;
 use Omega\Environment\ServeCommand;
 use Omega\Database\Commands\MigrateCommand;
 
@@ -24,7 +23,6 @@ use Omega\Database\Commands\MigrateCommand;
  * Return an array of commend to use.
  */
 return [
-    EnvironmentCommand::class,
     MigrateCommand::class,
     ServeCommand::class
 ];
