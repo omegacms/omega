@@ -32,13 +32,13 @@ use Omega\View\ServiceProvider\ViewServiceProvider;
  */
 return [
     ConfigServiceProvider::class,
-    SessionServiceProvider::class,
     CacheServiceProvider::class,
     DatabaseServiceProvider::class,
     FilesystemServiceProvider::class,
     QueueServiceProvider::class,
     LoggingServiceProvider::class,
     ResponseServiceProvider::class,
+    SessionServiceProvider::class,
     ValidationServiceProvider::class,
     ViewServiceProvider::class,
 ];
