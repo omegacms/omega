@@ -3,15 +3,15 @@
 <?php
 
 use Omega\Application\Application;
-use Symfony\Component\Console\Application as ConsoleApplication;
+use Symfony\Component\Console\Application as SymfonyConsoleApplication;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$app = Application::getInstance();
-$app->bind('paths.base', fn() => __DIR__);
+$application = Application::getInstance();
+$application->bind('paths.base', fn() => __DIR__);
+$application->run();
 
-
-$console = new ConsoleApplication();
+$console = new SymfonyConsoleApplication();
 
 $commands = require __DIR__ . '/config/console.php';
 
