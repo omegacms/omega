@@ -9,3 +9,7 @@
     RewriteRule ^.*$ - [NC,L]
     RewriteRule ^.*$ index.php [NC,L]
 </IfModule>
+
+<IfModule mod_php.c>
+    php_value session.auto_start 1
+</IfModule>
