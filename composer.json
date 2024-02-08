@@ -55,8 +55,9 @@
         }
     },
     "scripts": {
-        "serve": "php console serve",
-        "migrate": "php console migrate --fresh",
+        "serve": "php omega serve",
+	"migrate": "php omega migrate",
+        "dbfresh": "php omega migrate --fresh",
         "test": "vendor/bin/phpunit --verbose",
         "post-update-cmd": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\""

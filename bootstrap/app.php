@@ -39,7 +39,7 @@ $application = Application::getInstance(
 $application->bind( 'paths.base', fn() => dirname( __DIR__ ) );
 // $application->bind() da rimuovere al cambio di container.
 
-$application->run()->send();
+//$application->run()->send();
 //
 // --> All additional bootstrap code here <--
 //
