@@ -1,10 +1,10 @@
 <?php
 /**
- * Part of Banco Alimentare Toscana - App\Http Package
+ * Omega Application - config/logging configuration file.
  *
- * @link       https://github.com/adrix71/banco-alimentare
- * @author     Adriano Giovannini <dev@agmedia.io>
- * @copyright  Copyright (c) 2022 Banco Alimentare Toscana. (https://www.bancoalimentare.it/it/toscana)
+ * @link       https://omegacms.github.io
+ * @author     Adriano Giovannini <omegacms@outlook.com>
+ * @copyright  Copyright (c) 2022 Adriano Giovannini. (https://omegacms.github.io)
  * @license    https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  */
 
@@ -22,6 +22,13 @@ use Monolog\Logger;
  * Return an array of configuration for logger.
  */
 return [
+    /**
+     * Default Log Channel.
+     * 
+     * This options defines the default log channel that gets used when writing
+     * messages to the log. The name specified in this option  should match one
+     * of the channels defined in the "channels" configuration array. 
+     */
     'default' => 'stream',
     'stream'  => [
         'type'    => 'stream',
