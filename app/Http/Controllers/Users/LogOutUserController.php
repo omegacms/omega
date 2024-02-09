@@ -21,7 +21,7 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
-use Omega\Helpers\Alias;
+use function Omega\Helpers\redirect;
 use Omega\Routing\Router;
 use Exception;
 
@@ -50,6 +50,6 @@ class LogOutUserController
     {
         unset( $_SESSION[ 'user_id' ] );
 
-        return Alias::redirect( $router->route( 'show-home-page' ) );
+        return redirect( $router->route( 'show-home-page' ) );
     }
 }

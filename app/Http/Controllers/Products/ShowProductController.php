@@ -21,10 +21,10 @@ namespace App\Http\Controllers\Products;
 /**
  * @use
  */
+use function Omega\Helpers\csrf;
+use function Omega\Helpers\view;
 use App\Models\Product;
 use Omega\Routing\Router;
-use Omega\Helpers\Alias;
-use Omega\Helpers\Security;
 use Omega\View\View;
 use Exception;
 
@@ -54,12 +54,12 @@ class ShowProductController
         $parameters = $router->current()->parameters();
         $product    = Product::find( (int) $parameters[ 'product' ] );
 
-        return Alias::view('products/view', [
+        return view('products/view', [
             'product'     => $product,
             'orderAction' => $router->route('order-product', [
                 'product'    => $product->id,
             ] ),
-            'csrf'        => Security::csrf(),
+            'csrf'        => csrf(),
         ]);
     }
 }

@@ -21,9 +21,10 @@ namespace App\Http\Controllers\Products;
 /**
  * @use
  */
+use function Omega\Helpers\redirect;
+use function Omega\Helpers\secure;
+use function Omega\Helpers\session;
 use App\Models\Order;
-use Omega\Helpers\Alias;
-use Omega\Helpers\Security;
 use Omega\Routing\Router;
 use Exception;
 
@@ -50,10 +51,10 @@ class OrderProductController
      */
     public function handle( Router $router ) : mixed
     {
-        Security::secure();
+        secure();
 
         $data = [
-            'user_id'    => Alias::session( 'user_id' ),
+            'user_id'    => session( 'user_id' ),
             'quantity'   => (int) $_POST[ 'quantity' ],
             'product_id' => (int) $_POST[ 'product_id' ]
         ];
@@ -66,9 +67,9 @@ class OrderProductController
 
         $orderId = $order->id;
 
-        Alias::session()->put( 'order_id', $orderId );
-        Alias::session()->put( 'ordered', true );
+        session()->put( 'order_id', $orderId );
+        session()->put( 'ordered', true );
 
-        return Alias::redirect( $router->route( 'show-order-confirmation-page' ) );
+        return redirect( $router->route( 'show-order-confirmation-page' ) );
     }
 }

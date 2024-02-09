@@ -22,6 +22,10 @@ namespace App\Http\Controllers\Users;
  * @use
  */
 use function password_hash;
+use function Omega\Helpers\secure;
+use function Omega\Helpers\session;
+use function Omega\Helpers\redirect;
+use function Omega\Helpers\validate;
 use App\Models\User;
 use Omega\Helpers\Alias;
 use Omega\Helpers\Security;
@@ -51,9 +55,9 @@ class RegisterUserController
      */
     public function handle( Router $router ) : mixed
     {
-        Security::secure();
+        secure();
 
-        $data = Security::validate( $_POST, [
+        $data = validate( $_POST, [
             'name'     => [ 'required'           ],
             'email'    => [ 'required', 'email'  ],
             'password' => [ 'required', 'min:10' ],
@@ -65,8 +69,8 @@ class RegisterUserController
         $user->password = password_hash( $data[ 'password' ], PASSWORD_BCRYPT );
         $user->save();
 
-        Alias::session()->put( 'registered', true );
+        session()->put( 'registered', true );
 
-        return Alias::redirect( $router->route( 'show-home-page' ) );
+        return redirect( $router->route( 'show-home-page' ) );
     }
 }

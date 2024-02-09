@@ -22,9 +22,9 @@ namespace App\Http\Controllers;
  * @use
  */
 use function array_map;
+use function Omega\Helpers\app;
+use function Omega\Helpers\view;
 use App\Models\Product;
-use Omega\Helpers\App;
-use Omega\Helpers\Alias;
 use Omega\Routing\Router;
 use Omega\View\View;
 use Exception;
@@ -52,7 +52,7 @@ class ShowHomePageController
      */
     public function handle( Router $router) : View
     {
-        $cache              = App::application( 'cache' );
+        $cache              = app( 'cache' );
         $products           = Product::all();
         $productsWithRoutes = array_map( function ( $product ) use ( $cache, $router ) {
             $key = "route-for-product-{$product->id}";
@@ -67,7 +67,7 @@ class ShowHomePageController
 
         }, $products );
 
-        return Alias::view( 'home', [
+        return view( 'home', [
             'products' => $productsWithRoutes,
         ] );
     }

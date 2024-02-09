@@ -22,9 +22,11 @@ namespace App\Http\Controllers\Users;
  * @use
  */
 use function password_verify;
+use function Omega\Helpers\redirect;
+use function Omega\Helpers\secure;
+use function Omega\Helpers\session;
+use function Omega\Helpers\Validate;
 use App\Models\User;
-use Omega\Helpers\Alias;
-use Omega\Helpers\Security;
 use Omega\Routing\Router;
 use Exception;
 
@@ -51,9 +53,9 @@ class LogInUserController
      */
     public function handle( Router $router ) : mixed
     {
-        Security::secure();
+        secure();
 
-        $data = Security::validate($_POST, [
+        $data = validate($_POST, [
             'email'    => [ 'required', 'email'  ],
             'password' => [ 'required', 'min:10' ],
         ], 'login_errors' );
@@ -61,9 +63,9 @@ class LogInUserController
         $user = User::where( 'email', $data[ 'email' ] )->first();
 
         if ( $user && password_verify( $data[ 'password' ], $user->password ) ) {
-            Alias::session()->put( 'user_id', $user->id );
+            session()->put( 'user_id', $user->id );
         }
 
-        return Alias::redirect( $router->route( 'show-home-page' ) );
+        return redirect( $router->route( 'show-home-page' ) );
     }
 }

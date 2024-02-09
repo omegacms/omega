@@ -1,10 +1,11 @@
 <?php
 namespace App\Http\Controllers\Products;
 
+use function Omega\Helpers\session;
+use function Omega\Helpers\view;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
-use Omega\Helpers\Alias;
 use Omega\Routing\Router;
 use Omega\View\View;
 use Exception;
@@ -16,7 +17,7 @@ class OrderConfirmationController
      */
     public function handle( Router $router ) : View
     {
-        $orderId = Alias::session()->get( 'order_id' );
+        $orderId = session()->get( 'order_id' );
         $order   = Order::find((int)$orderId);
         $user    = User::find($order->user_id);
         $order->user_name = User::find($order->user_id)->name;
@@ -28,7 +29,7 @@ class OrderConfirmationController
 
         //$product = $order->product;
 
-        return Alias::view( 'products/confirmation', [
+        return view( 'products/confirmation', [
              'order'   => $order,
         ] );
     }

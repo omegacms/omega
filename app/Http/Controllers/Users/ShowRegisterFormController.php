@@ -21,8 +21,8 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
-use Omega\Helpers\Alias;
-use Omega\Helpers\Security;
+use function Omega\Helpers\csrf;
+use function Omega\Helpers\view;
 use Omega\Routing\Router;
 use Omega\View\View;
 use Exception;
@@ -50,10 +50,10 @@ class ShowRegisterFormController
      */
     public function handle( Router $router ) : View
     {
-        return Alias::view( 'users/register', [
+        return view( 'users/register', [
             'registerAction' => $router->route( 'register-user' ),
             'logInAction'    => $router->route( 'log-in-user'   ),
-            'csrf'           => Security::csrf(),
+            'csrf'           => csrf(),
         ]);
     }
 }
