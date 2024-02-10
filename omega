@@ -40,7 +40,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  * application.
  */
 $application = require_once __DIR__ . '/bootstrap/app.php';
-$application->run();
+//$application->run();
 
 /**
  * Register the Symfony console.
