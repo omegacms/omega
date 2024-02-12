@@ -26,10 +26,6 @@ use Omega\Application\Application;
  * Omega, and is  the IoC container  for the system binding all of 
  * the various parts.
  */
-/**$application = Application::getInstance(
-    $_ENV[ 'APP_BASE_PATH' ] ?? dirname( __DIR__ )
-);*/
-
 $application = Application::getInstance(
     $_ENV[ 'APP_BASE_PATH' ] ?? dirname( __DIR__ )
 );

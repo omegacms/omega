@@ -20,6 +20,6 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 
-<IfModule mod_php.c>
-    php_value session.auto_start 1
-</IfModule>
+#<IfModule mod_php.c>
+#    php_value session.auto_start 1
+#</IfModule>
