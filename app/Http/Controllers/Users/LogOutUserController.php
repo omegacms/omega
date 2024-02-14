@@ -22,6 +22,7 @@ namespace App\Http\Controllers\Users;
  * @use
  */
 use function Omega\Helpers\redirect;
+use function Omega\Helpers\session;
 use Omega\Routing\Router;
 use Exception;
 
@@ -48,7 +49,7 @@ class LogOutUserController
      */
     public function handle( Router $router ) : mixed
     {
-        unset( $_SESSION[ 'user_id' ] );
+        session()->flush( 'fw_user_id' );
 
         return redirect( $router->route( 'show-home-page' ) );
     }
