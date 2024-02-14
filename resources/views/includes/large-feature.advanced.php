@@ -12,10 +12,10 @@
             </div>
             <ol class="text-white flex flex-row space-x-2">
                 <li><a class="underline" href="/">Home</a></li>
-                @if(isset($_SESSION['user_id']))
+                @if(isset($_SESSION['fw_user_id']))
                     <li><a class="underline" href="/log-out">Log out</a></li>
                 @endif
-                @if(!isset($_SESSION['user_id']))
+                @if(!isset($_SESSION['fw_user_id']))
                     <li><a class="underline" href="/register">Register</a></li>
                 @endif
             </ol>
