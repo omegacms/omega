@@ -38,9 +38,10 @@
         "vlucas/phpdotenv": "^5.2"
     },
     "require-dev": {
-        "omegacms/testing": "^1.0.0",
-        "monolog/monolog": "^3.3",
         "filp/whoops": "^2.1",
+        "monolog/monolog": "^3.3",
+        "omegacms/testing": "^1.0.0",
+        "phpstan/phpstan": "^1.10",
         "phpunit/phpunit": "^9.5",
         "symfony/process": "^5.2"
     },
