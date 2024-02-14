@@ -17,7 +17,7 @@
     >
         @if(isset($_SESSION['fw_errors']))
             <ol class="list-disc text-red-500">
-                @foreach($_SESSION['errors'] as $field => $errors)
+                @foreach($_SESSION['fw_errors'] as $field => $errors)
                     @foreach($errors as $error)
                         <li>{{ $error }}</li>
                     @endforeach
