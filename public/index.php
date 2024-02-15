@@ -35,8 +35,3 @@ require_once __DIR__ . '/../vendor/autoload.php';
  */
 $application = require_once __DIR__ . '/../bootstrap/app.php';
 $application->run()->send();
-
-/**$application = Application::getInstance();
-$basePath = dirname(__DIR__);
-$application->bind('paths.base', fn() => $basePath);
-$application->run()->send();*/
