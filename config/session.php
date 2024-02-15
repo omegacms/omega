@@ -20,6 +20,6 @@ return [
     'default' => 'native',
     'native'  => [
         'type'   => 'native',
-        'prefix' => 'fw_'
+        'prefix' => ''
     ]
 ];

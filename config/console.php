@@ -16,7 +16,7 @@ declare( strict_types = 1 );
 /**
  * @use
  */
-use Omega\Environment\ServeCommand;
+use Omega\Environment\Command\ServeCommand;
 use Omega\Database\Command\MigrateCommand;
 
 /**

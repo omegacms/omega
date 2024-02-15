@@ -49,7 +49,7 @@ class LogOutUserController
      */
     public function handle( Router $router ) : mixed
     {
-        session()->flush( 'fw_user_id' );
+        session()->flush( 'user_id' );
 
         return redirect( $router->route( 'show-home-page' ) );
     }
