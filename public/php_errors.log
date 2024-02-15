@@ -1,9 +1,0 @@
-[15-Feb-2024 15:09:32 UTC] PHP Fatal error:  Uncaught Error: Class "Omega\Environment\ServiceProvider\EnvironmentServiceProvider" not found in /home/morpheus/www/omega/vendor/omegacms/container/src/Container.php:172
-Stack trace:
-#0 /home/morpheus/www/omega/vendor/omegacms/application/src/Application.php(183): Omega\Container\Container->register()
-#1 /home/morpheus/www/omega/vendor/omegacms/application/src/Application.php(89): Omega\Application\Application->bindBaseProviders()
-#2 /home/morpheus/www/omega/vendor/omegacms/application/src/SingletonTrait.php(69): Omega\Application\Application->__construct()
-#3 /home/morpheus/www/omega/bootstrap/app.php(29): Omega\Application\Application::getInstance()
-#4 /home/morpheus/www/omega/public/index.php(36): require_once('...')
-#5 {main}
-  thrown in /home/morpheus/www/omega/vendor/omegacms/container/src/Container.php on line 172
