@@ -4,8 +4,8 @@
 
 namespace Tests;
 
+use function Omega\Helpers\csrf;
 use Omega\Application\Application;
-use Omega\Helpers\Security;
 use Omega\Testing\TestCase;
 use Omega\Testing\TestResponse;
 
@@ -38,7 +38,7 @@ class RoutingTest extends TestCase
         $_SERVER['HTTP_REFERER'] = '/register';
 
         $_POST['email'] = 'foo';
-        $_POST['csrf'] = Security::csrf();
+        $_POST['csrf'] = csrf();
 
         $response = new TestResponse($this->application->run());
 
