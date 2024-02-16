@@ -1,6 +1,6 @@
 <?php
 /**
- * Part of Omega CMS - App/Exception Package
+ * Part of Omega CMS - App/Exceptions Package
  *
  * @link       https://omegacms.github.io
  * @author     Adriano Giovannini <omegacms@outlook.com>
