@@ -36,9 +36,15 @@ use Omega\Database\Relationship;
  * @license     https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  * @version     1.0.0
  */
-#[TableName('users')]
 class User extends AbstractModel
 {
+    /**
+     * Orders table.
+     *
+     * @var string $table Holds the name for the orders table.
+     */
+    protected string $table = 'users';
+
     /**
      * User profile model.
      *

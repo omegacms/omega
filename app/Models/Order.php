@@ -62,6 +62,6 @@ class Order extends AbstractModel
      */
      public function product() : Relationship
      {
-         return $this->belongsTo( Product::class );
+         return $this->belongsTo( Product::class, 'user_id' );
      }
 }
