@@ -10,9 +10,9 @@
             action="{{ $registerAction }}"
             class="flex flex-col w-full space-y-4 max-w-xl register-form"
         >
-            @if(isset($_SESSION['fw_register_errors']))
+            @if(isset($_SESSION['register_errors']))
                 <ol class="list-disc text-red-500 register-errors">
-                    @foreach($_SESSION['fw_register_errors'] as $field => $errors)
+                    @foreach($_SESSION['register_errors'] as $field => $errors)
                         @foreach($errors as $error)
                             <li>{{ $error }}</li>
                         @endforeach
@@ -66,9 +66,9 @@
             action="{{ $logInAction }}"
             class="flex flex-col w-full space-y-4 max-w-xl log-in-form"
         >
-            @if(isset($_SESSION['fw_login_errors']))
+            @if(isset($_SESSION['login_errors']))
                 <ol class="list-disc text-red-500 log-in-errors">
-                    @foreach($_SESSION['fw_login_errors'] as $field => $errors)
+                    @foreach($_SESSION['login_errors'] as $field => $errors)
                         @foreach($errors as $error)
                             <li>{{ $error }}</li>
                         @endforeach
