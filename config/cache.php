@@ -19,7 +19,7 @@ declare( strict_types = 1 );
 return [
     /**
      * Default Cache Store.
-     * 
+     *
      * This option controls the default cache connection thart gets used while
      * using this caching library. This connection is used when another is not
      * explicity specified when executng a given config function.

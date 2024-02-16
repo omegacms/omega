@@ -19,24 +19,24 @@ declare( strict_types = 1 );
 return [
     /**
      * Default Queue Connection Name.
-     * 
+     *
      * Omega queue API supports an assortment of back-ends via s single
      * API, giving you  convenient  access to  each back-end using  the
-     * same  syntax  for  every one.  Here  you  may  define  a default 
-     * connection. 
+     * same  syntax  for  every one.  Here  you  may  define  a default
+     * connection.
      */
     'default'  => 'database',
     /**
      * Queue Connections.
-     * 
-     * Here  you may configure  the  connection  information  for  each 
-     * server  that is used your  application. A  default configuration 
+     *
+     * Here  you may configure  the  connection  information  for  each
+     * server  that is used your  application. A  default configuration
      * has for each back-end shipped  witj Omega.  You are free to  add
      * more.
-     * 
+     *
      * Driver:
-     * 
-     * `Database` 
+     *
+     * `Database`
      */
     'database' => [
         'type'     => 'database',

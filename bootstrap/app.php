@@ -20,31 +20,23 @@ use Omega\Application\Application;
 
 /**
  * Create the main application object.
- * 
- * The first thing  we will  do is create  a new Omega application 
- * instance which  serves at the "glue" for  all the components of 
- * Omega, and is  the IoC container  for the system binding all of 
+ *
+ * The first thing  we will  do is create  a new Omega application
+ * instance which  serves at the "glue" for  all the components of
+ * Omega, and is  the IoC container  for the system binding all of
  * the various parts.
  */
 $application = Application::getInstance(
     $_ENV[ 'APP_BASE_PATH' ] ?? dirname( __DIR__ )
 );
 
-// Messa questa isruzione per far funzionare il container.
-// verrà rimossa nella prossima versione.
 $application->bind( 'paths.base', fn() => dirname( __DIR__ ) );
-// $application->bind() da rimuovere al cambio di container.
-
-//$application->run()->send();
-//
-// --> All additional bootstrap code here <--
-//
 
 /**
  * Return the application.
- * 
+ *
  * This script returns the application  instance. The instance is
- * given to the clling script  so we can separate the building of 
+ * given to the clling script  so we can separate the building of
  * the  instances from  the actual runing  of the application and
  * sending response.
  */

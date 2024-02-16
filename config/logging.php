@@ -24,10 +24,10 @@ use Monolog\Logger;
 return [
     /**
      * Default Log Channel.
-     * 
+     *
      * This options defines the default log channel that gets used when writing
      * messages to the log. The name specified in this option  should match one
-     * of the channels defined in the "channels" configuration array. 
+     * of the channels defined in the "channels" configuration array.
      */
     'default' => 'stream',
     'stream'  => [

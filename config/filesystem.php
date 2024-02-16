@@ -19,25 +19,25 @@ declare( strict_types = 1 );
 return [
     /**
      * Default Filesystem Disk.
-     * 
+     *
      * Here you may specify the default filesystem disk that shuld be used
      * by the framework. The "Local" disk, as a wel as a  veriety of cloud
-     * based disks are available to your applicatio. 
+     * based disks are available to your applicatio.
      */
     'default' => 'local',
     /**
      * Filesystem Disk.
-     * 
-     * Here you may configure as many filesystem "disks" as you whish, and 
+     *
+     * Here you may configure as many filesystem "disks" as you whish, and
      * you may even configure multiple disks  of the sam driver.  Defaults
      * have  been  set up for  each driver as an exampple  of the required
      * values.
-     * 
+     *
      * Supported driver:
-     * 
+     *
      * `local`
      * `s3`
-     * `ftp`  
+     * `ftp`
      */
     'local'   => [
         'type'     => 'local',
