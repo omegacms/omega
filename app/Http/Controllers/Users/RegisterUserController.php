@@ -1,10 +1,10 @@
 <?php
 /**
- * Part of Banco Alimentare Toscana - App\Http Package
+ * Part of Omega CMS - App/Http Package
  *
- * @link       https://github.com/adrix71/banco-alimentare
- * @author     Adriano Giovannini <dev@agmedia.io>
- * @copyright  Copyright (c) 2022 Banco Alimentare Toscana. (https://www.bancoalimentare.it/it/toscana)
+ * @link       https://omegacms.github.io
+ * @author     Adriano Giovannini <omegacms@outlook.com>
+ * @copyright  Copyright (c) 2022 Adriano Giovannini. (https://omegacms.github.io)
  * @license    https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  */
 
@@ -27,10 +27,7 @@ use function Omega\Helpers\session;
 use function Omega\Helpers\redirect;
 use function Omega\Helpers\validate;
 use App\Models\User;
-use Omega\Helpers\Alias;
-use Omega\Helpers\Security;
 use Omega\Routing\Router;
-use Exception;
 
 /**
  * Register user controller.
@@ -38,9 +35,9 @@ use Exception;
  * @category    App
  * @package     App\Http
  * @subpackage  Controllers\Users
- * @link        https://github.com/adrix71/banco-alimentare
- * @author      Adriano Giovannini <dev@agmedia.io>
- * @copyright   Copyright (c) 2022 Banco Alimentare Toscana. (https://www.bancoalimentare.it/it/toscana)
+ * @link        https://omegacms.github.io
+ * @author      Adriano Giovannini <omegacms@outlook.com>
+ * @copyright   Copyright (c) 2022 Adriano Giovannini. (https://omegacms.github.io)
  * @license     https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  * @version     1.0.0
  */
@@ -51,7 +48,6 @@ class RegisterUserController
      *
      * @param  Router $router Holds an instance of Router.
      * @return mixed
-     * @throws Exception
      */
     public function handle( Router $router ) : mixed
     {
