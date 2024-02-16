@@ -28,12 +28,11 @@ use Omega\Database\Relationship;
 /**
  * User model.
  *
- * @category    App
  * @package     App\Http
  * @subpackage  Models
- * @link        https://github.com/adrix71/banco-alimentare
- * @author      Adriano Giovannini <dev@agmedia.io>
- * @copyright   Copyright (c) 2022 Banco Alimentare Toscana. (https://www.bancoalimentare.it/it/toscana)
+ * @link        https://omegacms.github.io
+ * @author      Adriano Giovannini <omegacms@outlook.com>
+ * @copyright   Copyright (c) 2022 Adriano Giovannini. (https://omegacms.github.io)
  * @license     https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  * @version     1.0.0
  */
@@ -43,7 +42,7 @@ class User extends AbstractModel
     /**
      * User profile model.
      *
-     * @return Relationship
+     * @return Relationship Return the current relationship instance.
      */
     public function profile() : Relationship
     {
@@ -53,7 +52,7 @@ class User extends AbstractModel
     /**
      * User orders model.
      *
-     * @return Relationship
+     * @return Relationship Return the current relationship instance.
      */
     public function orders() : Relationship
     {
