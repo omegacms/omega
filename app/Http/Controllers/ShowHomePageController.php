@@ -23,6 +23,7 @@ namespace App\Http\Controllers;
  */
 use function array_map;
 use function Omega\Helpers\app;
+use function Omega\Helpers\session;
 use function Omega\Helpers\view;
 use App\Models\Product;
 use Omega\Routing\Router;
@@ -52,6 +53,8 @@ class ShowHomePageController
      */
     public function handle( Router $router) : View
     {
+        $user_id            = session()->get( 'user_id' );
+        
         $cache              = app( 'cache' );
         $products           = Product::all();
         $productsWithRoutes = array_map( function ( $product ) use ( $cache, $router ) {
@@ -68,6 +71,7 @@ class ShowHomePageController
         }, $products );
 
         return view( 'home', [
+            'user_id'  => $user_id,
             'products' => $productsWithRoutes,
         ] );
     }
