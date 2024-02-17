@@ -30,8 +30,6 @@ $application = Application::getInstance(
     $_ENV[ 'APP_BASE_PATH' ] ?? dirname( __DIR__ )
 );
 
-$application->bind( 'paths.base', fn() => dirname( __DIR__ ) );
-
 /**
  * Return the application.
  *

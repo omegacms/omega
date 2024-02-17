@@ -1,0 +1,16 @@
+[17-Feb-2024 16:26:36 UTC] PHP Fatal error:  Uncaught TypeError: Omega\Container\Container::bind(): Argument #2 ($factory) must be of type callable, string given, called in /home/morpheus/www/omega/vendor/omegacms/application/src/Application.php on line 93 and defined in /home/morpheus/www/omega/vendor/omegacms/container/src/Container.php:72
+Stack trace:
+#0 /home/morpheus/www/omega/vendor/omegacms/application/src/Application.php(93): Omega\Container\Container->bind()
+#1 /home/morpheus/www/omega/vendor/omegacms/application/src/Application.php(112): Omega\Application\Application->__construct()
+#2 /home/morpheus/www/omega/bootstrap/app.php(29): Omega\Application\Application::getInstance()
+#3 /home/morpheus/www/omega/public/index.php(36): require_once('...')
+#4 {main}
+  thrown in /home/morpheus/www/omega/vendor/omegacms/container/src/Container.php on line 72
+[17-Feb-2024 16:26:45 UTC] PHP Fatal error:  Uncaught TypeError: Omega\Container\Container::bind(): Argument #2 ($factory) must be of type callable, string given, called in /home/morpheus/www/omega/vendor/omegacms/application/src/Application.php on line 93 and defined in /home/morpheus/www/omega/vendor/omegacms/container/src/Container.php:72
+Stack trace:
+#0 /home/morpheus/www/omega/vendor/omegacms/application/src/Application.php(93): Omega\Container\Container->bind()
+#1 /home/morpheus/www/omega/vendor/omegacms/application/src/Application.php(112): Omega\Application\Application->__construct()
+#2 /home/morpheus/www/omega/bootstrap/app.php(29): Omega\Application\Application::getInstance()
+#3 /home/morpheus/www/omega/public/index.php(36): require_once('...')
+#4 {main}
+  thrown in /home/morpheus/www/omega/vendor/omegacms/container/src/Container.php on line 72
