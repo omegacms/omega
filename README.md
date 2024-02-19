@@ -1,3 +1,7 @@
+# Acknowledgments and Thanks
+
+First and foremost, I would like to express my gratitude to Christopher Pitt for the splendid second edition of his book on PHP and MVC. Without it, I wouldn't have found the inspiration and motivation to write this framework.
+
 # OmegaCMS Example Application
 
 This is the example application developed using the OmegaCMS framework. For more information about this application, its structure, controllers, models, views, or anything else, you are encouraged to visit the official [OmegaCMS](https://omegacms.github.io) website.
@@ -22,7 +26,7 @@ cd omega
 composer install
 ```
 
-## Database
+## Installing the Database
 
 First, create the database using phpMyAdmin or the command line, then input the database 
 details into the config/database.php file. Finally, create the tables with the following 
@@ -51,6 +55,8 @@ composer dbfresh
 ```
 
 ## Testing
+
+### Running Unit Tests
 
 To run unit tests, use the command:
 
