@@ -57,7 +57,7 @@
     },
     "scripts": {
         "serve": "php omega serve",
-	"migrate": "php omega migrate",
+        "migrate": "php omega migrate",
         "dbfresh": "php omega migrate --fresh",
         "test": "vendor/bin/phpunit --verbose",
         "post-update-cmd": [

@@ -22,6 +22,64 @@ cd omega
 composer install
 ```
 
+## Database
+
+First, create the database using phpMyAdmin or the command line, then input the database 
+details into the config/database.php file. Finally, create the tables with the following 
+command:
+```php
+php omega migrate 
+```
+
+or
+
+```php
+composer migrate
+```
+
+Alternatively, you can use the `--fresh` option. However, note that this option will delete 
+existing tables before recreating them.
+
+```php
+php omega migrate --fresh
+```
+
+or
+
+```
+composer dbfresh
+```
+
+## Testing
+
+To run unit tests, use the command:
+
+```php
+vendor/bin/phpunit
+```
+
+or
+
+```php
+composer serve
+```
+
+## PHP built-in server. 
+
+Omega has a script that starts the built-in PHP server. However, please note that due 
+to the absence of `pcntl` extensions, the verbosity level on Windows operating systems 
+is lower than that on Linux and MacOSX.
+
+```php
+php omega serve
+```
+
+or
+
+```php
+composer serve
+```
+
 ## Contributing
 
 If you'd like to contribute to the OmegaCMS example application package, please follow our [contribution guidelines](CONTRIBUTING.md).
