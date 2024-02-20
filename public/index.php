@@ -34,4 +34,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
  * application.
  */
 $application = require_once __DIR__ . '/../bootstrap/app.php';
-$application->run()->send();
+$application->bootstrap()->send();
