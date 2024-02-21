@@ -18,11 +18,13 @@ declare( strict_types = 1 );
  */
 use Omega\Environment\Command\ServeCommand;
 use Omega\Database\Command\MigrateCommand;
+use Omega\Queue\Command\WorkCommand;
 
 /**
  * Return an array of commend to use.
  */
 return [
     MigrateCommand::class,
-    ServeCommand::class
+    ServeCommand::class,
+    WorkCommand::class
 ];
