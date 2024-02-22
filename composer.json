@@ -30,7 +30,7 @@
         "omegacms/queue": "^1.0.0",
         "omegacms/renderer": "^1.0.0",
         "omegacms/routing": "^1.0.0",
-        "omegacms/serviceprovider": "^1.0.0",
+        "omegacms/service-provider": "^1.0.0",
         "omegacms/session": "^1.0.0",
         "omegacms/validation": "^1.0.0",
         "omegacms/view": "^1.0.0",
