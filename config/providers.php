@@ -18,6 +18,7 @@ declare( strict_types = 1 );
  */
 use Omega\Cache\ServiceProvider\CacheServiceProvider;
 use Omega\Database\ServiceProvider\DatabaseServiceProvider;
+use Omega\Email\ServiceProvider\EmailServiceProvider;
 use Omega\Filesystem\ServiceProvider\FilesystemServiceProvider;
 use Omega\Queue\ServiceProvider\QueueServiceProvider;
 use Omega\Logging\ServiceProvider\LoggingServiceProvider;
@@ -31,6 +32,7 @@ use Omega\View\ServiceProvider\ViewServiceProvider;
 return [
     CacheServiceProvider::class,
     DatabaseServiceProvider::class,
+    EmailServiceProvider::class,
     FilesystemServiceProvider::class,
     QueueServiceProvider::class,
     LoggingServiceProvider::class,
