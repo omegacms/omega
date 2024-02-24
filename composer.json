@@ -21,7 +21,7 @@
         "omegacms/config": "^1.0.0",
         "omegacms/container": "^1.0.0",
         "omegacms/database": "^1.0.0",
-	"omegacms/email": "^1.0.0",
+	    "omegacms/email": "^1.0.0",
         "omegacms/environment": "^1.0.0",
         "omegacms/exceptions": "^1.0.0",
         "omegacms/filesystem": "^1.0.0",
