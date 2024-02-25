@@ -4,5 +4,4 @@ use Omega\Application\Application;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$app = Application::getInstance();
-$app->bind('paths.base', fn() => __DIR__ . '/..');
+$application = require_once __DIR__ . '/../bootstrap/app.php';
