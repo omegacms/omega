@@ -45,8 +45,8 @@ return [
         'type'  => 'postmark',
         'token' => env( 'EMAIL_TOKEN' ),
         'from'  => [
-            'name'  => env( 'EMAIL_FROM_NAME' ),
-            'email' => env( 'EMAIL_FROM_EMAIL' ),
+            'name'  => env( 'EMAIL_FROM_NAME', 'pippo' ),
+            'email' => env( 'EMAIL_FROM_EMAIL', 'pippo@hotmail.com' ),
         ],
 
     ]

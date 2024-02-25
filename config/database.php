@@ -14,6 +14,11 @@
 declare( strict_types = 1 );
 
 /**
+ * @use
+ */
+use function Omega\Helpers\env;
+
+/**
  * Return an array of database configuration parameters.
  */
 return [
@@ -24,7 +29,7 @@ return [
      * to use as your default connection for all database work.  Of course,
      * you may use many connection at once using the Database library.
      */
-    'default'   => 'mysql',
+    'default'   => env('DB_CONNECTION', 'mysql'),
     /**
      * Database connection.
      *
@@ -38,11 +43,11 @@ return [
      */
     'mysql'     => [
         'type'     => 'mysql',
-        'host'     => '127.0.0.1',
-        'port'     => '3306',
-        'database' => 'promvc',
-        'username' => 'root',
-        'password' => 'vb65ty4',
+        'host'     => env('DB_HOST', '127.0.0.1'),
+        'port'     => env('DB_PORT', '3306'),
+        'database' => env('DB_DATABASE', 'promvc'),
+        'username' => env('DB_USERNAME', 'root'),
+        'password' => env('DB_PASSWORD', 'vb65ty4'),
     ],
     'sqlite'    => [
         'type'     => 'sqlite',
