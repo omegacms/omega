@@ -24,28 +24,28 @@ use function Omega\Helpers\env;
 return [
     /**
      * Default Mailer
-     * 
+     *
      * This option controls the default mailer  that is used to send  any mail
      * message sent by your application. Alternative mailers  may by setup and
-     * used as need: however, this mailer will be used by default.  
+     * used as need: however, this mailer will be used by default.
      */
     'default'  => 'postmark',
 
     /**
      * Mailer Configuration
-     * 
+     *
      * Here you mai configure all of the mailers used by your application plus
      * their respective settings.
-     * 
+     *
      * Supported ("for now")
-     * 
+     *
      * + `postmark`
      */
     'postmark' => [
         'type'  => 'postmark',
         'token' => env( 'EMAIL_TOKEN' ),
         'from'  => [
-            'name'  => env( 'EMAIL_FROM_NAME'  ),
+            'name'  => env( 'EMAIL_FROM_NAME' ),
             'email' => env( 'EMAIL_FROM_EMAIL' ),
         ],
 
