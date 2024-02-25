@@ -4,4 +4,4 @@ vendor/
 .vscode/
 .phpdoc/
 composer.lock
-TODO.md
+TODO
