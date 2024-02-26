@@ -14,6 +14,11 @@
 declare( strict_types = 1 );
 
 /**
+ * @use
+ */
+use function Omega\Helpers\env;
+
+/**
  * Return an array of filesystem configuration parameters.
  */
 return [
@@ -24,7 +29,8 @@ return [
      * by the framework. The "Local" disk, as a wel as a  veriety of cloud
      * based disks are available to your applicatio.
      */
-    'default' => 'local',
+    'default' => env( 'FILESYSTEM_DISK', 'local' ),
+    
     /**
      * Filesystem Disk.
      *
@@ -45,17 +51,17 @@ return [
     ],
     's3'      => [
         'type'     => 's3',
-        'key'      => '',
-        'secret'   => '',
-        'token'    => '',
-        'region'   => '',
-        'bucket'   => '',
+        'key'      => env( 'AWS_ACCESS_KEY_ID' ),
+        'secret'   => env( 'AWS_SECRET_ACCESS_KEY' ),
+        'token'    => env( 'AWS_TOKEN' ),
+        'region'   => env( 'AWS_DEFAULT_REGION' ),
+        'bucket'   => env( 'AWS_BUCKET' ),
     ],
     'ftp'     => [
         'type'     => 'ftp',
-        'host'     => '',
-        'root'     => '',
-        'username' => '',
-        'password' => '',
+        'host'     => env( 'FTP_HOST' ),
+        'root'     => env( 'FTP_ROOT' ),
+        'username' => env( 'FTP_USERNAME' ),
+        'password' => env( 'FTP_PASSWORD' ),
     ],
 ];

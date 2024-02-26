@@ -14,6 +14,11 @@
 declare( strict_types = 1 );
 
 /**
+ * @use
+ */
+use function Omega\Helpers\env;
+
+/**
  * Return an array of cache configuration parameters.
  */
 return [
@@ -24,19 +29,19 @@ return [
      * using this caching library. This connection is used when another is not
      * explicity specified when executng a given config function.
      */
-    'default'  => 'file',
+    'default'  => env( 'CACHE_DRIVER', 'file' ),
     'memory'   => [
         'type'    => 'memory',
-        'seconds' => '31536000'
+        'seconds' => env( 'CACHE_SECONDS','31536000' )
     ],
     'file'     => [
         'type'    => 'file',
-        'seconds' => '31536000'
+        'seconds' => env( 'CACHE_SECONDS','31536000' )
     ],
     'memcache' => [
         'type'    => 'memcache',
-        'host'    => '127.0.0.1',
-        'port'    => 11211,
-        'seconds' => 31536000,
+        'host'    => env( 'MEMCACHE_HOST', '127.0.0.1' ),
+        'port'    => env( 'MEMCACHE_PORT', '11211' ),
+        'seconds' => env( 'CACHE_SECONDS','31536000' )
     ]
 ];
