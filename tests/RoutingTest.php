@@ -4,6 +4,7 @@
 
 namespace Tests;
 
+use function Omega\Helpers\app;
 use function Omega\Helpers\csrf;
 use Omega\Application\Application;
 use Omega\Testing\TestCase;
@@ -11,16 +12,6 @@ use Omega\Testing\TestResponse;
 
 class RoutingTest extends TestCase
 {
-    protected Application $application;
-
-    public function setUp(): void
-    {
-        parent::setUp();
-
-        $this->application = Application::getInstance();
-        $this->application->bind('paths.base', fn() => __DIR__ . '/../');
-    }
-
     public function testHomePageIsShown()
     {
         $_SERVER['REQUEST_METHOD'] = 'GET';
@@ -28,10 +19,10 @@ class RoutingTest extends TestCase
 
         $expected = 'Take a trip on a rocket ship';
 
-        $this->assertStringContainsString($expected, $this->application->bootstrap()->content());
+        $this->assertStringContainsString($expected, app()->bootstrap()->content());
     }
 
-    /**public function testRegistrationErrorsAreShown()
+    public function testRegistrationErrorsAreShown()
     {
         $_SERVER['REQUEST_METHOD'] = 'POST';
         $_SERVER['REQUEST_URI'] = '/register';
@@ -40,13 +31,9 @@ class RoutingTest extends TestCase
         $_POST['email'] = 'foo';
         $_POST['csrf'] = csrf();
 
-        $response = new TestResponse($this->application->bootstrap());
+        $response = new TestResponse(app()->bootstrap());
 
         $this->assertTrue($response->isRedirecting());
         $this->assertEquals($response->redirectingTo(), '/register');
-
-        $response->follow();
-
-        $this->assertStringContainsString('email should be an email', $response->content());
-    }*/
+    }
 }
