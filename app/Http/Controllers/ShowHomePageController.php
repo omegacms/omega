@@ -52,7 +52,6 @@ class ShowHomePageController
     public function handle( Router $router) : View
     {
         $user_id            = session()->get( 'user_id' );
-        
         $cache              = app( 'cache' );
         $products           = Product::all();
         $productsWithRoutes = array_map( function ( $product ) use ( $cache, $router ) {
