@@ -21,9 +21,9 @@ namespace App\Models;
 /**
  * @use
  */
-use Omega\Database\TableName;
-use Omega\Database\Model\AbstractModel;
-use Omega\Database\Relationship;
+use Omega\Model\AbstractModel;
+use Omega\Model\Relationship;
+use Omega\Model\TableName;
 
 /**
  * User model.
