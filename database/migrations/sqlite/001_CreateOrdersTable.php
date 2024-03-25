@@ -44,7 +44,7 @@ class CreateOrdersTable
         $table->id( 'id' );
         $table->int( 'user_id' );
         $table->int( 'product_id' );
-        $table->int( 'quantity' )->nullable()->alter();
+        $table->int( 'quantity' )->nullable();
         $table->float( 'price' )->nullable();
         $table->bool( 'is_confirmed' )->default( false );
         $table->dateTime( 'ordered_at' )->default( 'CURRENT_TIMESTAMP' );
