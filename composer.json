@@ -37,6 +37,7 @@
     "omegacms/routing": "^1.0.0",
     "omegacms/serializable-closure": "~1.0.0",
     "omegacms/session": "^1.0.0",
+    "omegacms/support": "^1.0.0",
     "omegacms/validation": "^1.0.0",
     "omegacms/view": "^1.0.0",
     "symfony/console": "^5.1",
