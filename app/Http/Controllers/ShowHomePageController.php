@@ -67,14 +67,6 @@ class ShowHomePageController
 
         }, $products );
 
-        app( 'queue' )->push(
-            fn( $name ) => app( 'email' )
-                ->setTo( 'agisoftt@gmail.com' )
-                ->setText( 'Questo è il testo caro {$name}' )
-                ->send(),
-                'Adriano'
-        );
-
         return view( 'home', [
             'user_id'  => $user_id,
             'products' => $productsWithRoutes,

@@ -17,6 +17,7 @@ declare( strict_types = 1 );
  * @use
  */
 use function Omega\Helpers\env;
+use function Omega\Helpers\get_storage_path;
 
 /**
  * Return an array of cache configuration parameters.
@@ -36,7 +37,8 @@ return [
     ],
     'file'     => [
         'type'    => 'file',
-        'seconds' => env( 'CACHE_SECONDS','31536000' )
+        'seconds' => env( 'CACHE_SECONDS','31536000' ),
+	    'path'    => get_storage_path( 'framework/data/cache' ),
     ],
     'memcache' => [
         'type'    => 'memcache',

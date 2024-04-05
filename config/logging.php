@@ -16,6 +16,7 @@ declare( strict_types = 1 );
 /**
  * @use
  */
+use function Omega\Helpers\get_storage_path;
 use Monolog\Logger;
 
 /**
@@ -32,7 +33,7 @@ return [
     'default' => 'stream',
     'stream'  => [
         'type'    => 'stream',
-        'path'    => __DIR__ . '/../storage/app.log',
+        'path'    => get_storage_path( 'logs/omega.log' ),
         'name'    => 'App',
         'minimum' => Logger::INFO,
     ],

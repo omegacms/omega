@@ -17,6 +17,7 @@ declare( strict_types = 1 );
  * @use
  */
 use function Omega\Helpers\env;
+use function Omega\Helpers\get_database_path;
 
 /**
  * Return an array of database configuration parameters.
@@ -51,6 +52,6 @@ return [
     ],
     'sqlite'    => [
         'type'     => 'sqlite',
-        'path'     => __DIR__ . '/../database/sqlite/database.sqlite',
+        'path'     => get_database_path( 'sqlite/database.sqlite' ),
     ],
 ];

@@ -17,6 +17,7 @@ declare( strict_types = 1 );
  * @use
  */
 use function Omega\Helpers\env;
+use function Omega\Helpers\get_storage_path;
 
 /**
  * Return an array of filesystem configuration parameters.
@@ -30,7 +31,7 @@ return [
      * based disks are available to your applicatio.
      */
     'default' => env( 'FILESYSTEM_DISK', 'local' ),
-    
+
     /**
      * Filesystem Disk.
      *
@@ -47,7 +48,7 @@ return [
      */
     'local'   => [
         'type'     => 'local',
-        'path'     => __DIR__ . '/../storage/app',
+        'path'     => get_storage_path( 'app' ),
     ],
     's3'      => [
         'type'     => 's3',
