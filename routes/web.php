@@ -24,14 +24,26 @@ use App\Http\Controllers\Users\LogInUserController;
 use App\Http\Controllers\Users\LogOutUserController;
 use App\Http\Controllers\Users\RegisterUserController;
 use App\Http\Controllers\Users\ShowRegisterFormController;
+use App\Http\Controllers\Users\ShowLoginFormController;
+use App\Http\Controllers\Errors\ResponseNotAllowedController;
+use App\Http\Controllers\Errors\PageNotFoundController;
+use App\Http\Controllers\Errors\InternalServerErrorController;
 use Omega\Routing\Router;
 
 /**
  * Return an array of route path.
  */
 return function( Router $router ) {
-    $router->errorHandler(
-        404, fn() => 'whoops!'
+    $router->errorhandler( 
+        400, [new ResponseNotAllowedController(), 'handle']
+    );
+
+    $router->errorhandler( 
+        404, [new PageNotFoundController(), 'handle']
+    );
+
+    $router->errorhandler( 
+        500, [new InternalServerErrorController(), 'handle']
     );
 
     $router->addRoute(
@@ -58,6 +70,11 @@ return function( Router $router ) {
         'GET', '/register',
         [new ShowRegisterFormController(), 'handle'],
     )->name('show-register-form');
+
+    $router->addRoute(
+        'GET', '/log-in',
+        [new ShowLoginFormController(), 'handle'],
+    )->name('show-login-form');
 
     $router->addRoute(
         'POST', '/register',
