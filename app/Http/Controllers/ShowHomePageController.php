@@ -25,6 +25,7 @@ use function array_map;
 use function Omega\Helpers\app;
 use function Omega\Helpers\session;
 use function Omega\Helpers\view;
+use Exception;
 use App\Models\Product;
 use Omega\Routing\Router;
 use Omega\View\View;
@@ -48,6 +49,7 @@ class ShowHomePageController
      *
      * @param  Router $router Holds an instance of Router.
      * @return View Return an instance of View.
+     * @throws Exception
      */
     public function handle( Router $router) : View
     {

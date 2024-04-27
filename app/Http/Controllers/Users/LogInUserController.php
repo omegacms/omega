@@ -21,6 +21,7 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
+use Exception;
 use function password_verify;
 use function Omega\Helpers\redirect;
 use function Omega\Helpers\secure;
@@ -48,6 +49,7 @@ class LogInUserController
      *
      * @param  Router $router Holds an instance of Router.
      * @return mixed
+     * @throws Exception
      */
     public function handle( Router $router ) : mixed
     {

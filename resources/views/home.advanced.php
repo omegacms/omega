@@ -1,5 +1,5 @@
 @extends('layout')
-@includes('includes/large-feature')
+@includes('includes/header-large')
 @foreach($products as $i => $product)
     <div class="
         z-10
@@ -14,9 +14,14 @@
             <p class="text-xl my-4">
                 {!! $product->description !!}
             </p>
-            <a href="{{ $product->route }}" class="bg-indigo-500 rounded-lg p-2 text-white">
-                Order
-            </a>
+            <p class="text-xl my-4">
+                Price: $ {! $product->price !}
+            </p>
+            @if(isset($_SESSION['user_id']))
+                <a href="{{ $product->route }}" class="bg-indigo-500 rounded-lg p-2 text-white">
+                    Ord  er
+                </a>
+            @endif       
         </div>
     </div>
 @endforeach

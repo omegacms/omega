@@ -26,9 +26,9 @@ return [
     /**
      * Default Cache Store.
      *
-     * This option controls the default cache connection thart gets used while
+     * This option controls the default cache connection  that gets used while
      * using this caching library. This connection is used when another is not
-     * explicity specified when executng a given config function.
+     * explicit specified when executing a given config function.
      */
     'default'  => env( 'CACHE_DRIVER', 'file' ),
     'memory'   => [

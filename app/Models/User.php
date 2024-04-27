@@ -23,7 +23,6 @@ namespace App\Models;
  */
 use Omega\Model\AbstractModel;
 use Omega\Model\Relationship;
-use Omega\Model\TableName;
 
 /**
  * User model.

@@ -20,7 +20,7 @@ use Omega\Database\Adapter\AbstractDatabaseAdapter;
 
 /**
  * Create orders table class.
- * 
+ *
  * @category    Application
  * @package     Application\Database
  * @subpackage  Application\Database\Migration
@@ -45,7 +45,7 @@ class CreateOrdersTable
         $table->int( 'user_id' );
         $table->int( 'product_id' );
         $table->int( 'quantity' )->default( 1 );
-        $table->float( 'price' )->nullable();
+        $table->numeric( 'total_price' )->nullable();
         $table->bool( 'is_confirmed' )->default( false );
         $table->dateTime( 'ordered_at' )->default( 'CURRENT_TIMESTAMP' );
         $table->text( 'notes' );

@@ -23,8 +23,8 @@ use Omega\Application\Application;
  *
  * The first thing  we will  do is create  a new Omega application
  * instance which  serves at the "glue" for  all the components of
- * Omega, and is  the IoC container  for the system binding all of
- * the various parts.
+ * Omega,  and  is   the IoC container  for the system binding all
+ * * the various parts.
  */
 $application = Application::getInstance(
     $_ENV[ 'APP_BASE_PATH' ] ?? dirname( __DIR__ )
@@ -33,9 +33,9 @@ $application = Application::getInstance(
 /**
  * Return the application.
  *
- * This script returns the application  instance. The instance is
- * given to the clling script  so we can separate the building of
- * the  instances from  the actual runing  of the application and
+ * This script returns the application   instance. The instance is
+ * given to the calling script, so we can separate the building of
+ * the  instances from  the actual running  of the application and
  * sending response.
  */
 return $application;

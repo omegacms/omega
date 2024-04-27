@@ -25,6 +25,7 @@ use App\Http\Controllers\Users\LogOutUserController;
 use App\Http\Controllers\Users\RegisterUserController;
 use App\Http\Controllers\Users\ShowRegisterFormController;
 use App\Http\Controllers\Users\ShowLoginFormController;
+use App\Http\Controllers\Users\UserProfileController;
 use App\Http\Controllers\Errors\ResponseNotAllowedController;
 use App\Http\Controllers\Errors\PageNotFoundController;
 use App\Http\Controllers\Errors\InternalServerErrorController;
@@ -90,4 +91,9 @@ return function( Router $router ) {
         'GET', '/log-out',
         [new LogOutUserController(), 'handle'],
     )->name('log-out-user');
+
+    $router->addRoute(
+        'GET', '/profile',
+        [new UserProfileController(), 'handle'],
+    )->name('show-user-profile');
 };

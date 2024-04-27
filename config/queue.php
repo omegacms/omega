@@ -31,7 +31,7 @@ return [
      *
      * Here  you may configure  the  connection  information  for  each
      * server  that is used your  application. A  default configuration
-     * has for each back-end shipped  witj Omega.  You are free to  add
+     * has for each back-end shipped  with Omega.  You are free to  add
      * more.
      *
      * Driver:

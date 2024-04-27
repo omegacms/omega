@@ -26,18 +26,18 @@ return [
     /**
      * Default Filesystem Disk.
      *
-     * Here you may specify the default filesystem disk that shuld be used
-     * by the framework. The "Local" disk, as a wel as a  veriety of cloud
-     * based disks are available to your applicatio.
+     * Here you may specify the default filesystem disk that should be used
+     * by the framework. The "Local" disk, as  a wel as a  variety of cloud
+     * based disks are available to your application.
      */
     'default' => env( 'FILESYSTEM_DISK', 'local' ),
 
     /**
      * Filesystem Disk.
      *
-     * Here you may configure as many filesystem "disks" as you whish, and
+     * Here you may configure as many filesystem "disks" as you which, and
      * you may even configure multiple disks  of the sam driver.  Defaults
-     * have  been  set up for  each driver as an exampple  of the required
+     * have  been  set up for  each driver  as an example  of the required
      * values.
      *
      * Supported driver:

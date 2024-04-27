@@ -26,7 +26,7 @@ return [
      * Default Mailer
      *
      * This option controls the default mailer  that is used to send  any mail
-     * message sent by your application. Alternative mailers  may by setup and
+     * message sent by your application. Alternative mailers  may be setup and
      * used as need: however, this mailer will be used by default.
      */
     'default'  => 'postmark',
@@ -34,7 +34,7 @@ return [
     /**
      * Mailer Configuration
      *
-     * Here you mai configure all of the mailers used by your application plus
+     * Here you mai configure all the mailers used by your application plus
      * their respective settings.
      *
      * Supported ("for now")

@@ -26,7 +26,7 @@ return [
     /**
      * Default Database Connection Name.
      *
-     * here you may secify which of the database connection below  you wish
+     * here you may specify which of the database connection below you wish
      * to use as your default connection for all database work.  Of course,
      * you may use many connection at once using the Database library.
      */
@@ -39,7 +39,7 @@ return [
      * supported by Omega is shown below to make development simple.
      *
      * All database work in Omega  is done through the PH PDO  facilities so
-     * make sure you have the driver for your particular  database of coiche
+     * make sure you have the  driver for your particular  database of cache
      * installed on your machine before you being development.
      */
     'mysql'     => [

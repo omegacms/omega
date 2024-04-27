@@ -21,13 +21,11 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
-use Exception;
-use function Omega\Helpers\redirect;
-use function Omega\Helpers\session;
-use Omega\Routing\Router;
+use function Omega\Helpers\view;
+use Omega\View\View;
 
 /**
- * Logout user controller.
+ * User profile controller.
  *
  * @category    App
  * @package     App\Http
@@ -38,19 +36,15 @@ use Omega\Routing\Router;
  * @license     https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  * @version     1.0.0
  */
-class LogOutUserController
+class UserProfileController
 {
     /**
      * Handle the controller.
      *
-     * @param  Router $router Holds an instance of Router.
-     * @return mixed
-     * @throws Exception
+     * @return View
      */
-    public function handle( Router $router ) : mixed
+    public function handle() : View
     {
-        session()->flush( 'user_id' );
-
-        return redirect( $router->route( 'show-home-page' ) );
+        return view( '/users/profile' );
     }
 }

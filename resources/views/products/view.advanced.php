@@ -1,11 +1,14 @@
 @extends('layout')
-@includes('includes/large-feature')
+@includes('includes/header-large')
 <div class="container mx-auto px-8 py-8 md:py-16">
     <h1 class="text-3xl font-bold">
         {{ $product->name }} 
     </h1>
     <p class="text-xl my-4">
         {!! $product->description !!}
+    </p>
+    <p class="text-xl my-4">
+        Price: ${! $product->price !}
     </p>
     <h2 class="text-2xl font-bold">
         Order
@@ -26,6 +29,7 @@
         @endif
         <input type="hidden" name="csrf" value="{{ $csrf }}" />
         <input type="hidden" name="product_id" value="{!! $product->id !!}" />
+        <input type="hidden" name="product_price" value="{! $product->price !}" />
         <label for="quantity" class="flex flex-col w-full">
             <span class="flex">Quantity:</span>
             <input

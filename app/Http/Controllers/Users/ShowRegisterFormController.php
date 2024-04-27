@@ -21,6 +21,7 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
+use Exception;
 use function Omega\Helpers\csrf;
 use function Omega\Helpers\view;
 use Omega\Routing\Router;
@@ -45,6 +46,7 @@ class ShowRegisterFormController
      *
      * @param  Router $router Holds an instance of Router.
      * @return View Return an instance of View.
+     * @throws Exception
      */
     public function handle( Router $router ) : View
     {

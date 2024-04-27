@@ -21,6 +21,7 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
+use Exception;
 use function password_hash;
 use function Omega\Helpers\secure;
 use function Omega\Helpers\session;
@@ -48,6 +49,7 @@ class RegisterUserController
      *
      * @param  Router $router Holds an instance of Router.
      * @return mixed
+     * @throws Exception
      */
     public function handle( Router $router ) : mixed
     {

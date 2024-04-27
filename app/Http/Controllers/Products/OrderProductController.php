@@ -21,6 +21,7 @@ namespace App\Http\Controllers\Products;
 /**
  * @use
  */
+use Exception;
 use function Omega\Helpers\redirect;
 use function Omega\Helpers\secure;
 use function Omega\Helpers\session;
@@ -46,6 +47,7 @@ class OrderProductController
      *
      * @param  Router $router Holds an instance of Router.
      * @return mixed
+     * @throws Exception
      */
     public function handle( Router $router ) : mixed
     {
@@ -54,13 +56,15 @@ class OrderProductController
         $data = [
             'user_id'    => session( 'user_id' ),
             'quantity'   => (int) $_POST[ 'quantity' ],
-            'product_id' => (int) $_POST[ 'product_id' ]
+            'product_id' => (int) $_POST[ 'product_id' ],
+            'unit_price' => (float)$_POST[ 'product_price' ] * (int) $_POST[ 'quantity' ],
         ];
-
-        $order           = new Order();
-        $order->user_id  = $data[ 'user_id'  ];
-        $order->quantity = $data[ 'quantity' ];
-        $order->product_id = $data[ 'product_id'  ];
+        
+        $order              = new Order();
+        $order->user_id     = $data[ 'user_id'  ];
+        $order->quantity    = $data[ 'quantity' ];
+        $order->product_id  = $data[ 'product_id'  ];
+        $order->total_price = $data[ 'unit_price' ];
         $order->save();
 
         $orderId = $order->id;

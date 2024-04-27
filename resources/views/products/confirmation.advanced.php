@@ -1,5 +1,5 @@
 @extends('layout')
-@includes('includes/large-feature')
+@includes('includes/header-large')
 <div class="container mx-auto px-8 py-8 md:py-16">
     <div class="flex justify-between items-center mb-4">
         <h1 class="text-3xl font-bold">
@@ -18,6 +18,7 @@
             <th class="bg-gray-100 border border-gray-300 px-4 py-2 text-center">Order Date</th>
             <th class="bg-gray-100 border border-gray-300 px-4 py-2 text-center">Product Name</th>
             <th class="bg-gray-100 border border-gray-300 px-4 py-2 text-center">Quantity Ordered</th>
+            <th class="bg-gray-100 border border-gray-300 px-4 py-2 text-center">Total Price</th>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
             <td class="border border-gray-300 px-4 py-2 text-center">{!! $order->ordered_at !!}</td>
             <td class="border border-gray-300 px-4 py-2 text-center">{{ $order->product_name }}</td>
             <td class="border border-gray-300 px-4 py-2 text-center">{!! $order->quantity !!}</td>
+            <td class="border border-gray-300 px-4 py-2 text-center">$ {! $order->total_price !}</td>
         </tr>
         <tr>
             <td colspan="5" class="px-4 py-2">
