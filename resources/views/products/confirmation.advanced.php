@@ -40,7 +40,7 @@
                             <textarea id="notes" name="notes" class="w-full p-2 border border-gray-500 rounded-md mb-2" rows="8" cols="15"></textarea>
                         </div>
                         <div class="w-1/2 pl-4">
-                            <label for="delivery_instruction" class="block mb-2 text-left text-center">Delivery Instructions</label>
+                            <label for="delivery_instruction" class="block mb-2 text-center">Delivery Instructions</label>
                             <textarea id="delivery_instruction" name="delivery_instruction" class="w-full p-2 border border-gray-500 rounded-md mb-2" rows="8" cols="15"></textarea>
                         </div>
                     </div>
