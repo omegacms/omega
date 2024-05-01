@@ -21,6 +21,7 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
+use function Omega\Helpers\session;
 use function Omega\Helpers\view;
 use Omega\View\View;
 
@@ -45,6 +46,8 @@ class UserProfileController
      */
     public function handle() : View
     {
+        session();
+
         return view( '/users/profile' );
     }
 }
