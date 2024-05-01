@@ -1,5 +1,5 @@
 @extends('layout')
-@includes('includes/header-large')
+@includes('parts/headers/header-large')
 <div class="container mx-auto px-8 py-8 md:py-16">
     <div class="flex justify-between items-center mb-4">
         <h1 class="text-3xl font-bold">

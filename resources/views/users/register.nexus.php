@@ -1,5 +1,5 @@
 @extends('layout')
-@includes('includes/header-small')
+@includes('parts/headers/header-small')
 <div class="container mx-auto flex flex-col space-x-0 lg:space-x-8 space-y-16 lg:space-y-0 px-8 py-8 md:py-16">
     <div class="items-center flex flex-col">
         <h1 class="text-center text-3xl font-bold">

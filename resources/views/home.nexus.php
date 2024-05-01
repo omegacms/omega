@@ -1,5 +1,5 @@
 @extends('layout')
-@includes('includes/header-large')
+@includes('parts/headers/header-large')
 @foreach($products as $i => $product)
     <div class="
         z-10
