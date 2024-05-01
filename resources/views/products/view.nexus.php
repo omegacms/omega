@@ -8,7 +8,7 @@
         {!! $product->description !!}
     </p>
     <p class="text-xl my-4">
-        Price: ${! $product->price !}
+        Price: $ {! $product->price !}
     </p>
     <h2 class="text-2xl font-bold">
         Order
