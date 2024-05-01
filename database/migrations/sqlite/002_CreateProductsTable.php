@@ -44,6 +44,7 @@ class CreateProductsTable
         $table->id( 'id' );
         $table->string( 'name' );
         $table->text( 'description' );
+        $table->int( 'price' )->nullable();
         $table->execute();
     }
 }
