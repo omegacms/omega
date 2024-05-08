@@ -36,64 +36,64 @@ use Omega\Routing\Router;
  */
 return function( Router $router ) {
     $router->errorhandler( 
-        400, [new ResponseNotAllowedController(), 'handle']
+        400, [ new ResponseNotAllowedController(), 'handle' ]
     );
 
     $router->errorhandler( 
-        404, [new PageNotFoundController(), 'handle']
+        404, [ new PageNotFoundController(), 'handle' ]
     );
 
     $router->errorhandler( 
-        500, [new InternalServerErrorController(), 'handle']
+        500, [ new InternalServerErrorController(), 'handle' ]
     );
 
     $router->addRoute(
         'GET', '/',
-        [new ShowHomePageController(), 'handle'],
-    )->name('show-home-page');
+        [ new ShowHomePageController(), 'handle' ],
+    )->name( 'show-home-page' );
 
     $router->addRoute(
         'GET', '/products/view/{product}',
-        [new ShowProductController(), 'handle'],
-    )->name('view-product');
+        [ new ShowProductController(), 'handle' ],
+    )->name( 'view-product' );
 
     $router->addRoute(
         'POST', '/products/order/{product}',
-        [new OrderProductController(), 'handle'],
-    )->name('order-product');
+        [ new OrderProductController(), 'handle' ],
+    )->name( 'order-product' );
 
     $router->addRoute(
         'GET', '/products/confirmation',
-        [new OrderConfirmationController(), 'handle'],
-    )->name('show-order-confirmation-page');
+        [ new OrderConfirmationController(), 'handle' ],
+    )->name( 'show-order-confirmation-page' );
 
     $router->addRoute(
         'GET', '/register',
-        [new ShowRegisterFormController(), 'handle'],
-    )->name('show-register-form');
+        [ new ShowRegisterFormController(), 'handle' ],
+    )->name( 'show-register-form' );
 
     $router->addRoute(
         'GET', '/log-in',
-        [new ShowLoginFormController(), 'handle'],
-    )->name('show-login-form');
+        [ new ShowLoginFormController(), 'handle' ],
+    )->name( 'show-login-form' );
 
     $router->addRoute(
         'POST', '/register',
-        [new RegisterUserController(), 'handle'],
-    )->name('register-user');
+        [ new RegisterUserController(), 'handle' ],
+    )->name( 'register-user' );
 
     $router->addRoute(
         'POST', '/log-in',
-        [new LogInUserController(), 'handle'],
-    )->name('log-in-user');
+        [ new LogInUserController(), 'handle' ],
+    )->name( 'log-in-user' );
 
     $router->addRoute(
         'GET', '/log-out',
-        [new LogOutUserController(), 'handle'],
-    )->name('log-out-user');
+        [ new LogOutUserController(), 'handle' ],
+    )->name( 'log-out-user' );
 
     $router->addRoute(
         'GET', '/profile',
-        [new UserProfileController(), 'handle'],
-    )->name('show-user-profile');
+        [ new UserProfileController(), 'handle' ],
+    )->name( 'show-user-profile' );
 };
