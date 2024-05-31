@@ -51,7 +51,7 @@ class ShowHomePageController
      * @return View Return an instance of View.
      * @throws Exception
      */
-    public function handle( Router $router) : View
+    public function handle( Router $router ) : View
     {
         $user_id            = session()->get( 'user_id' );
         $cache              = app( 'cache' );

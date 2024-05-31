@@ -59,7 +59,7 @@ class OrderProductController
             'product_id' => (int) $_POST[ 'product_id' ],
             'unit_price' => (float)$_POST[ 'product_price' ] * (int) $_POST[ 'quantity' ],
         ];
-        
+
         $order              = new Order();
         $order->user_id     = $data[ 'user_id'  ];
         $order->quantity    = $data[ 'quantity' ];

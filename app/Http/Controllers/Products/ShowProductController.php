@@ -51,7 +51,7 @@ class ShowProductController
      */
     public function handle( Router $router ) : View
     {
-        $parameters = $router->current()->parameters();
+        $parameters = $router->getCurrent()->getParameters();
         $product    = Product::find( (int) $parameters[ 'product' ] );
 
         return view('products/view', [

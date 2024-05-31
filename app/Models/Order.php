@@ -58,7 +58,7 @@ class Order extends AbstractModel
     /**
      * Product method.
      *
-     * 5@return Relationship Return the current relationship instance.
+     * @return Relationship Return the current relationship instance.
      */
      public function product() : Relationship
      {

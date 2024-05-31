@@ -35,31 +35,31 @@ use Omega\Routing\Router;
  * Return an array of route path.
  */
 return function( Router $router ) {
-    $router->errorhandler( 
+    $router->errorhandler(
         400, [ new ResponseNotAllowedController(), 'handle' ]
     );
 
-    $router->errorhandler( 
+    $router->errorhandler(
         404, [ new PageNotFoundController(), 'handle' ]
     );
 
-    $router->errorhandler( 
+    $router->errorhandler(
         500, [ new InternalServerErrorController(), 'handle' ]
     );
 
-    $router->addRoute(
-        'GET', '/',
-        [ new ShowHomePageController(), 'handle' ],
+    $router->get(
+        '/',
+        [ ShowHomePageController::class, 'handle' ],
     )->name( 'show-home-page' );
 
-    $router->addRoute(
-        'GET', '/products/view/{product}',
-        [ new ShowProductController(), 'handle' ],
+    $router->get(
+        '/products/view/{product}',
+        [ ShowProductController::class, 'handle' ],
     )->name( 'view-product' );
 
-    $router->addRoute(
-        'POST', '/products/order/{product}',
-        [ new OrderProductController(), 'handle' ],
+    $router->post(
+        '/products/order/{product}',
+        [ OrderProductController::class, 'handle' ],
     )->name( 'order-product' );
 
     $router->addRoute(
