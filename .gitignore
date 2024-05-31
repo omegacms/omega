@@ -8,3 +8,4 @@ composer.lock
 package-lock.json
 TODO
 database/sqlite/database.sqlite
+phpDocumentor.phar
