@@ -25,7 +25,7 @@ define( 'OMEGA_START', microtime( true ) );
  * Register the autoloader.
  *
  * Composer  provides  a  convenient automatically generated class
- * loader for this application. We just need to utilize it!. We'll
+ * loader for this application. We just need to utilize it.  We'll
  * simply  require  it  into  the script here so we don't  need to
  * manualy load our classes.
  */
