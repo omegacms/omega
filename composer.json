@@ -13,7 +13,8 @@
   ],
   "keywords": [
     "omegacms",
-    "framework"
+    "framework",
+    "cms"
   ],
   "require": {
     "php": ">=8.2",
