@@ -25,7 +25,7 @@ use function mb_strimwidth;
 use function mb_strwidth;
 use function rtrim;
 use function ucwords;
-use Omega\Model\AbstractModel;
+use Omega\Database\AbstractModel;
 
 /**
  * Product model.

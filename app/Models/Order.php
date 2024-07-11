@@ -21,8 +21,8 @@ namespace App\Models;
 /**
  * @use
  */
-use Omega\Model\AbstractModel;
-use Omega\Model\Relationship;
+use Omega\Database\AbstractModel;
+use Omega\Database\Relationship;
 
 /**
  * Model order class.
