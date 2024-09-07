@@ -1,0 +1,17 @@
+vendor/
+node_modules/
+.phpunit.cache/
+.env
+.idea/
+.vscode/
+.phpdoc/
+composer.lock
+package-lock.json
+database/sqlite/database.sqlite
+storage/app/*
+!storage/app/*.placeholder
+storage/framework/data/*
+!storage/framework/data/*.placeholder
+storage/log/*
+!storage/log/*.placeholder
+coverage-report/
