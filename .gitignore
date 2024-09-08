@@ -7,11 +7,6 @@ node_modules/
 .phpdoc/
 composer.lock
 package-lock.json
+phpunit.xml
 database/sqlite/database.sqlite
-storage/app/*
-!storage/app/*.placeholder
-storage/framework/data/*
-!storage/framework/data/*.placeholder
-storage/log/*
-!storage/log/*.placeholder
 coverage-report/
