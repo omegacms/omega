@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <phpunit 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
-        bootstrap="tests/bootstrap.php"
-        cacheResultFile=".phpunit.cache/test-results"
-        executionOrder="depends,defects"
-        beStrictAboutCoversAnnotation="true"
-        beStrictAboutOutputDuringTests="true"
-        beStrictAboutTodoAnnotatedTests="true"
-        convertDeprecationsToExceptions="true"
-        failOnRisky="true"
-        failOnWarning="true"
-        verbose="true"
+    xsi:noNamespaceSchemaLocation="phpunit.xsd"
+    bootstrap="tests/bootstrap.php"
+	cacheDirectory=".phpunit.cache/"
+	cacheResult="true"
+    executionOrder="depends,defects"
+	defaultTestSuite="OmegaCMS Test Suite"
+    beStrictAboutOutputDuringTests="true"
+    failOnRisky="true"
+    failOnWarning="true"
 	testdox="true"
+	testdoxSummary="true"
 	colors="true"
 	>
  	<testsuites>
-        	<testsuite name="OmegaCMS Test Suite">
-            		<directory>tests</directory>
+ 		<testsuite name="OmegaCMS Test Suite">
+      		<directory>tests</directory>
 			<directory>vendor/omegacms/*/tests</directory>
-        	</testsuite>
-   	 </testsuites>
-
-    	<coverage 
-		cacheDirectory=".phpunit.cache/code-coverage"
-              	processUncoveredFiles="true"
+      	</testsuite>
+  	</testsuites>
+	<source>
+		<include>
+			<directory suffix=".php">app</directory>
+			<directory suffix=".php">vendor/omegacms/*/src</directory>
+		</include>
+	</source>
+    <coverage 
+		includeUncoveredFiles="true"
+		pathCoverage="true"
 		>
-        	<include>
-            		<directory suffix=".php">app</directory>
-			<directory suffix=".php">vendor/omegacms/*/src</directory>			
-        	</include>
-    	</coverage>
+		<report>
+    		<html outputDirectory="coverage-report" lowUpperBound="50" highLowerBound="90"/>
+		</report>
+	</coverage>
+	<logging>
+    	<testdoxHtml outputFile="coverage-report/testdox.html"/>
+	</logging>
 </phpunit>
