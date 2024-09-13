@@ -21,31 +21,17 @@
       "composer/composer": "2.*",
       "league/flysystem": "^3.28",
       "omegacms/framework": "^1.0.0",
-      "symfony/console": "^7.1",
-      "monolog/monolog": "^3.7"
-    },
-    "require-dev": {
-      "filp/whoops": "^2.15",
-      "omegacms/testing": "^1.0.0",
-      "phpstan/phpstan": "^1.12",
-      "phpunit/phpunit": "^11.3.4",
-      "symfony/process": "^7.1"
+      "symfony/console": "^7.1"
     },
     "autoload": {
       "psr-4": {
         "App\\": "app/"
       }
     },
-    "autoload-dev": {
-      "psr-4": {
-        "Tests\\": "tests/"
-      }
-    },
     "scripts": {
       "serve": "php omega serve",
       "dbmigrate": "php omega migrate",
-      "dbfresh": "php omega migrate --fresh",
-      "test": "./vendor/bin/phpunit --configuration phpunit.xml --testdox --coverage-html coverage-report/",
+      "dbfresh": "php omega migrate --fresh"
       "post-update-cmd": [
         "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
       ]
