@@ -8,7 +8,7 @@
     executionOrder="depends,defects"
 	defaultTestSuite="OmegaCMS Test Suite"
     beStrictAboutOutputDuringTests="true"
-    failOnRisky="true"
+	failOnRisky="true"
     failOnWarning="true"
 	testdox="true"
 	testdoxSummary="true"
