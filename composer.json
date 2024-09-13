@@ -33,7 +33,7 @@
     "scripts": {
       "serve": "php omega serve",
       "dbmigrate": "php omega migrate",
-      "dbfresh": "php omega migrate --fresh"
+      "dbfresh": "php omega migrate --fresh",
       "post-update-cmd": [
         "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
       ]
