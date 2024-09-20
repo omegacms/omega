@@ -32,13 +32,15 @@ use Omega\Database\Adapter\AbstractDatabaseAdapter;
  */
 class CreateOrdersTable
 {
+    public string $table = 'orders';
+    
     /**
      * Create table orders.
      *
      * @param  AbstractDatabaseAdapter $connection Holds the current connection instance.
      * @return void
      */
-    public function migrate( AbstractDatabaseAdapter $connection ) : void
+    public function up( AbstractDatabaseAdapter $connection ) : void
     {
         $table = $connection->createTable( 'orders' );
         $table->id( 'id' );
@@ -48,9 +50,21 @@ class CreateOrdersTable
         $table->int( 'total_price' )->nullable();
         $table->bool( 'is_confirmed' )->default( false );
         $table->dateTime( 'ordered_at' )->default( 'CURRENT_TIMESTAMP' );
-	$table->dateTime( 'completed_at' )->nullable();
-        $table->text( 'notes' )->default('');
-        $table->text( 'delivery_instruction' )->default('');
+		$table->dateTime( 'completed_at' )->nullable();
+        $table->text( 'notes' );
+        $table->text( 'delivery_instruction' );
         $table->execute();
+    }
+
+    /**
+     * Rollback the migration (drop the 'orders' table).
+     *
+     * @param  AbstractDatabaseAdapter $connection Holds the current connection instance.
+     * @return void
+     */
+    public function down(AbstractDatabaseAdapter $connection): void
+    {
+        $query = "DROP TABLE IF EXISTS `{$this->table}`";
+        $connection->pdo()->prepare($query)->execute();
     }
 }

@@ -32,13 +32,14 @@ use Omega\Database\Adapter\AbstractDatabaseAdapter;
  */
 class CreateJobsTable
 {
+    public string $table = 'jobs';
     /**
      * Alter tables jobs.
      *
      * @param  AbstractDatabaseAdapter $connection Holds the current connection instance.
      * @return void
      */
-    public function migrate( AbstractDatabaseAdapter $connection ) : void
+    public function up( AbstractDatabaseAdapter $connection ) : void
     {
         $table = $connection->createTable( 'jobs' );
         $table->id( 'id' );
@@ -47,5 +48,17 @@ class CreateJobsTable
         $table->int( 'attempts' )->default( 0 );
         $table->bool( 'is_complete' )->default( false );
         $table->execute();
+    }
+
+    /**
+     * Rollback the migration (drop the 'jobs' table).
+     *
+     * @param  AbstractDatabaseAdapter $connection Holds the current connection instance.
+     * @return void
+     */
+    public function down(AbstractDatabaseAdapter $connection): void
+    {
+        $query = "DROP TABLE IF EXISTS `{$this->table}`";
+        $connection->pdo()->prepare($query)->execute();
     }
 }

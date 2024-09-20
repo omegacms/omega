@@ -32,13 +32,15 @@ use Omega\Database\Adapter\AbstractDatabaseAdapter;
  */
 class SeedProducts
 {
+    public string $table = 'products';
+
     /**
      * Add products.
      *
      * @param  AbstractDatabaseAdapter $connection Holds the current connection instance.
      * @return void
      */
-    public function migrate( AbstractDatabaseAdapter $connection ) : void
+    public function up( AbstractDatabaseAdapter $connection ) : void
     {
         $products = [
             [
@@ -61,7 +63,7 @@ class SeedProducts
         foreach ( $products as $product ) {
             $connection
                 ->query()
-                ->from( 'products' )
+                ->from( $this->table )
                 ->insert( [ 'name', 'description', 'price' ], $product );
         }
     }
