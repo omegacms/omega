@@ -7,3 +7,4 @@ composer.lock
 package-lock.json
 database/sqlite/database.sqlite
 php_errors.log
+report.txt
