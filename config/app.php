@@ -14,31 +14,6 @@
 declare( strict_types = 1 );
 
 /**
- * @use
- */
-use Omega\Config\ServiceProvider\ConfigServiceProvider;
-use Omega\Cache\ServiceProvider\CacheServiceProvider;
-use Omega\Database\ServiceProvider\DatabaseServiceProvider;
-use Omega\Queue\ServiceProvider\QueueServiceProvider;
-use Omega\Http\ServiceProvider\ResponseServiceProvider;
-use Omega\Routing\ServiceProvider\RouterServiceProvider;
-use Omega\Session\ServiceProvider\SessionServiceProvider;
-use Omega\Validation\ServiceProvider\ValidationServiceProvider;
-use Omega\View\ServiceProvider\ViewServiceProvider;
-use Omega\Support\Facades\Config;
-use Omega\Support\Facades\Cache;
-use Omega\Support\Facades\Database;
-use Omega\Support\Facades\Email;
-use Omega\Support\Facades\Filesystem;
-use Omega\Support\Facades\Logging;
-use Omega\Support\Facades\Queue;
-use Omega\Support\Facades\Response;
-use Omega\Support\Facades\Router;
-use Omega\Support\Facades\Session;
-use Omega\Support\Facades\Validation;
-use Omega\Support\Facades\View;
-
-/**
  * Return an array with common application parameters.
  */
 return [
@@ -55,35 +30,35 @@ return [
 	 * Array of ServiceProviders.
 	 */
 	'providers' => [
-        ConfigServiceProvider::class,
-        CacheServiceProvider::class,
-        DatabaseServiceProvider::class,
-        //EmailServiceProvider::class,
-        //FilesystemServiceProvider::class,
-        //LoggingServiceProvider::class,
-        QueueServiceProvider::class,
-        ResponseServiceProvider::class,
-        RouterServiceProvider::class,
-        SessionServiceProvider::class,
-        ValidationServiceProvider::class,
-        ViewServiceProvider::class,
+        \Omega\Config\ServiceProvider\ConfigServiceProvider::class,
+        \Omega\Cache\ServiceProvider\CacheServiceProvider::class,
+        \Omega\Database\ServiceProvider\DatabaseServiceProvider::class,
+        //\Omega\Email\ServiceProvider\EmailServiceProvider::class,
+        //\Omega\Filesystem\ServiceProvider\FilesystemServiceProvider::class,
+        //\Omega\Logging\ServiceProvider\LoggingServiceProvider::class,
+        \Omega\Queue\ServiceProvider\QueueServiceProvider::class,
+        \Omega\Http\ServiceProvider\ResponseServiceProvider::class,
+        \Omega\Routing\ServiceProvider\RouterServiceProvider::class,
+        \Omega\Session\ServiceProvider\SessionServiceProvider::class,
+        \Omega\Validation\ServiceProvider\ValidationServiceProvider::class,
+        \Omega\View\ServiceProvider\ViewServiceProvider::class,
     ],
 
 	/**
 	 * Array of facades class.
 	 */
 	'facades'   => [
-        'Config'     => Config::class,
-        'Cache'      => Cache::class,
-        'Database'   => Database::class,
-        //'Email'      => Email::class,
-        //'Filesystem' => Filesystem::class,
-        //'Logging'    => Logging::class,
-        'Queue'      => Queue::class,
-        'Response'   => Response::class,
-        'Router'     => Router::class,
-        'Session'    => Session::class,
-        'Validation' => Validation::class,
-        'View'       => View::class
+        'Config'     => \Omega\Support\Facades\Config::class,
+        'Cache'      => \Omega\Support\Facades\Cache::class,
+        'Database'   => \Omega\Support\Facades\Database::class,
+        //'Email'      => \Omega\Support\Facades\Email::class,
+        //'Filesystem' => \Omega\Support\Facades\Filesystem::class,
+        //'Logging'    => \Omega\Support\Facades\Logging::class,
+        'Queue'      => \Omega\Support\Facades\Queue::class,
+        'Response'   => \Omega\Support\Facades\Response::class,
+        'Router'     => \Omega\Support\Facades\Router::class,
+        'Session'    => \Omega\Support\Facades\Session::class,
+        'Validation' => \Omega\Support\Facades\Validation::class,
+        'View'       => \Omega\Support\Facades\View::class
     ],
 ];
