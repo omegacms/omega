@@ -21,7 +21,7 @@ namespace App\Exceptions;
 /**
  * @use
  */
-use Omega\Exceptions\ExceptionHandler;
+use Omega\Support\Exception\ExceptionHandler;
 use Throwable;
 
 /**
