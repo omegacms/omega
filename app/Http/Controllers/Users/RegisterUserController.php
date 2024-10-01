@@ -49,7 +49,7 @@ class RegisterUserController
      * @return \Omega\View\View
      * @throws Exception
      */
-    public function handle() : \Omega\View\View
+    public function handle()
     {
         secure();
 
