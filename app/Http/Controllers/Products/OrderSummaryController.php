@@ -24,9 +24,9 @@ namespace App\Http\Controllers\Products;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
-use Omega\Routing\Router;
-use Omega\View\View;
-
+use Omega\Support\Facades\Router;
+use Omega\Support\Facades\Session;
+use Omega\Support\Facades\View;
 /**
  * Order summary controller class.
  *
@@ -44,20 +44,19 @@ class OrderSummaryController
     /**
      * Handle the controller.
      *
-     * @param  Router $router Holds an instance of Router.
-     * @return View Return an instance of View.
+     * @return \Omega\View\View Return an instance of View.
      */
-    public function handle( Router $router ) : View
+    public function handle() :\Omega\View\View
     {
-        $orderId             = session()->get( 'order_id' );
+        $orderId             = Session::get( 'order_id' );
         $order               = Order::find( (int)$orderId );
         $order->user_name    = User::find( $order->user_id )->name;
         $order->product_name = Product::find( $order->product_id )->name;
 
-        return view( 'products/summary', [
+        return View::render( 'products/summary', [
              'order'        => $order,
-             'deleteAction' => $router->route( 'delete-product' ),
-             'buyAction'    => $router->route( 'buy-product' ),
+             'deleteAction' => Router::route( 'delete-product' ),
+             'buyAction'    => Router::route( 'buy-product' ),
              'csrf'         => csrf()
         ] );
     }

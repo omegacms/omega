@@ -24,7 +24,10 @@ namespace App\Http\Controllers\Users;
 use Exception;
 use function password_verify;
 use App\Models\User;
-use Omega\Routing\Router;
+use Omega\Support\Facades\Response;
+use Omega\Support\Facades\Router;
+use Omega\Support\Facades\Session;
+use Omega\Support\Facades\Validation;
 
 /**
  * Login user controller.
@@ -43,15 +46,14 @@ class LogInUserController
     /**
      * Handle the controller.
      *
-     * @param  Router $router Holds an instance of Router.
-     * @return mixed
+     * @return \Omega\View\View
      * @throws Exception
      */
-    public function handle( Router $router ) : mixed
+    public function handle() : \Omega\View\View
     {
         secure();
 
-        $data = validate($_POST, [
+        $data = Validation::validate($_POST, [
             'email'    => [ 'required', 'email'  ],
             'password' => [ 'required', 'min:10' ],
         ], 'login_errors' );
@@ -59,9 +61,9 @@ class LogInUserController
         $user = User::where( 'email', $data[ 'email' ] )->first();
 
         if ( $user && password_verify( $data[ 'password' ], $user->password ) ) {
-            session()->put( 'user_id', $user->id );
+            Session::put( 'user_id', $user->id );
         }
 
-        return redirect( $router->route( 'show-home-page' ) );
+        return Response::redirect( Router::route( 'show-home-page' ) );
     }
 }

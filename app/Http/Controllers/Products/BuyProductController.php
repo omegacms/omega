@@ -23,7 +23,7 @@ namespace App\Http\Controllers\Products;
  */
 use Exception;
 use App\Models\Order;
-use Omega\View\View;
+use Omega\Support\Facades\View;
 
 /**
  * Buy product controller class.
@@ -42,10 +42,10 @@ class BuyProductController
 	/**
      * Handle the controller.
      *
-     * @return View Return an instance of View.
+     * @return \Omega\View\View Return an instance of View.
      * @throws Exception
      */
-	public function handle() : View
+	public function handle() : \Omega\View\View
 	{
 		session();
 		secure();
@@ -67,7 +67,7 @@ class BuyProductController
 		
 		$order->save();
 
-		return view( 'products/buy-product', [
+		return View::render( 'products/buy-product', [
 			'order' => $order
 		] );
 	}

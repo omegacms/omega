@@ -21,10 +21,11 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
-use Omega\View\View;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
+use Omega\Support\Facades\Session;
+use Omega\Support\Facades\View;
 
 /**
  * User order controller.
@@ -40,9 +41,9 @@ use App\Models\User;
  */
 class UserOrdersController
 {
-    public function handle() : View
+    public function handle() : \Omega\View\View
     {
-        $user_id = session()->get( 'user_id' );
+        $user_id = Session::get( 'user_id' );
         $orders  = Order::all($user_id );
 
         foreach ( $orders as $order ) {
@@ -50,7 +51,7 @@ class UserOrdersController
             $order->product_name .= Product::where( 'id', $order->product_id)->first()->name;
         }
 
-        return view( 'users/orders', [
+        return View::render( 'users/orders', [
             'orders'  => $orders,
          ] );
     }

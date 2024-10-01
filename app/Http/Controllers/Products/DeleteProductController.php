@@ -22,8 +22,8 @@ namespace App\Http\Controllers\Products;
  * @use
  */
 use Exception;
-use Omega\View\View;
 use App\Models\Order;
+use Omega\Support\Facades\View;
 
 /**
  * Delete product controller class.
@@ -42,10 +42,10 @@ class DeleteProductController
 	/**
 	 * Handle the controller.
 	 *
-	 * @return View Return an instance of View.
+	 * @return \Omega\View\]View Return an instance of View.
 	 * @throws Exception
 	 */
-	public function handle() : View
+	public function handle() : \Omega\View\View
 	{
 		session();
 
@@ -55,7 +55,7 @@ class DeleteProductController
 		
 		Order::where( 'id', $order_id )->delete();
 
-		return view( 'products/delete-product', [
+		return View::render( 'products/delete-product', [
 			'order' => $order
 		] );
 	}

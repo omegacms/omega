@@ -22,7 +22,9 @@ namespace App\Http\Controllers\Users;
  * @use
  */
 use Exception;
-use Omega\Routing\Router;
+use Omega\Support\Facades\Response;
+use Omega\Support\Facades\Router;
+use Omega\Support\Facades\Session;
 
 /**
  * Logout user controller.
@@ -41,14 +43,13 @@ class LogOutUserController
     /**
      * Handle the controller.
      *
-     * @param  Router $router Holds an instance of Router.
-     * @return mixed
+     * @return \Omega\View\View
      * @throws Exception
      */
-    public function handle( Router $router ) : mixed
+    public function handle() : \Omega\View\View
     {
-        session()->flush( 'user_id' );
+        Session::flush( 'user_id' );
 
-        return redirect( $router->route( 'show-home-page' ) );
+        return Response::redirect( Router::route( 'show-home-page' ) );
     }
 }

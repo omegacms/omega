@@ -21,7 +21,7 @@ namespace App\Http\Controllers\Errors;
 /**
  * @use
  */
-use Omega\View\View;
+use Omega\Support\Facades\View;
 
 /**
  * Error 404 controller.
@@ -40,10 +40,10 @@ class PageNotFoundController
     /**
      * Handle the controller.
      *
-     * @return View
+     * @return \Omega\View\View
      */
-    public function handle() : View
+    public function handle() : \Omega\View\View
     {
-        return view( 'errors/error404' );
+        return View::render( 'errors/error404' );
     }
 }

@@ -21,6 +21,7 @@ use Omega\Cache\ServiceProvider\CacheServiceProvider;
 use Omega\Database\ServiceProvider\DatabaseServiceProvider;
 use Omega\Queue\ServiceProvider\QueueServiceProvider;
 use Omega\Http\ServiceProvider\ResponseServiceProvider;
+use Omega\Routing\ServiceProvider\RouterServiceProvider;
 use Omega\Session\ServiceProvider\SessionServiceProvider;
 use Omega\Validation\ServiceProvider\ValidationServiceProvider;
 use Omega\View\ServiceProvider\ViewServiceProvider;
@@ -32,6 +33,7 @@ use Omega\Support\Facades\Filesystem;
 use Omega\Support\Facades\Logging;
 use Omega\Support\Facades\Queue;
 use Omega\Support\Facades\Response;
+use Omega\Support\Facades\Router;
 use Omega\Support\Facades\Session;
 use Omega\Support\Facades\Validation;
 use Omega\Support\Facades\View;
@@ -61,6 +63,7 @@ return [
         //LoggingServiceProvider::class,
         QueueServiceProvider::class,
         ResponseServiceProvider::class,
+        RouterServiceProvider::class,
         SessionServiceProvider::class,
         ValidationServiceProvider::class,
         ViewServiceProvider::class,
@@ -78,6 +81,7 @@ return [
         //'Logging'    => Logging::class,
         'Queue'      => Queue::class,
         'Response'   => Response::class,
+        'Router'     => Router::class,
         'Session'    => Session::class,
         'Validation' => Validation::class,
         'View'       => View::class

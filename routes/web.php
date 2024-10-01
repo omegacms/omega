@@ -35,100 +35,100 @@ use App\Http\Controllers\Users\UserOrdersController;
 use App\Http\Controllers\Errors\ResponseNotAllowedController;
 use App\Http\Controllers\Errors\PageNotFoundController;
 use App\Http\Controllers\Errors\InternalServerErrorController;
-use Omega\Routing\Router;
+use Omega\Support\Facades\Router;
 
 /**
  * Return an array of route path.
  */
-return function( Router $router ) {
-    $router->errorhandler(
+return function() {
+    Router::errorhandler(
         400, [ new ResponseNotAllowedController(), 'handle' ]
     );
 
-    $router->errorhandler(
+    Router::errorhandler(
         404, [ new PageNotFoundController(), 'handle' ]
     );
 
-    $router->errorhandler(
+    Router::errorhandler(
         500, [ new InternalServerErrorController(), 'handle' ]
     );
 
-    $router->get(
+    Router::get(
         '/',
         [ ShowHomePageController::class, 'handle' ],
     )->name( 'show-home-page' );
 
-    $router->get(
+    Router::get(
         '/products/view/{product}',
         [ ShowProductController::class, 'handle' ],
     )->name( 'view-product' );
 
-    $router->post(
+    Router::post(
         '/products/order/{product}',
         [ OrderProductController::class, 'handle' ],
     )->name( 'order-product' );
 
-    $router->get(
+    Router::get(
         '/products/summary',
         [ new OrderSummaryController(), 'handle' ],
     )->name( 'show-order-summary-page' );
 
-    $router->post(
+    Router::post(
 		'/products/buy-product',
 		[ BuyProductController::class, 'handle' ]
     )->name( 'buy-product' );
 
-    $router->post(
+    Router::post(
 		'/products/delete-product',
 		[ DeleteProductController::class, 'handle' ]
     )->name( 'delete-product' );
 
-    $router->get(
+    Router::get(
         '/register',
         [ ShowRegisterFormController::class, 'handle' ],
     )->name( 'show-register-form' );
 
-    $router->get(
+    Router::get(
         '/user/log-in',
         [ new ShowLoginFormController(), 'handle' ],
     )->name( 'show-login-form' );
 
-    $router->post(
+    Router::post(
         '/register',
         [ new RegisterUserController(), 'handle' ],
     )->name( 'register-user' );
 
-    $router->post(
+    Router::post(
         '/user/log-in',
         [ new LogInUserController(), 'handle' ],
     )->name( 'log-in-user' );
 
-    $router->get(
+    Router::get(
         '/user/log-out',
         [ new LogOutUserController(), 'handle' ],
     )->name( 'log-out-user' );
 
-    $router->get(
+    Router::get(
         '/user/dashboard',
         [ new UserDashboardController(), 'handle' ],
     )->name( 'show-user-dashboard' );
 
-    $router->get(
+    Router::get(
         '/user/details',
         [ new UserDetailsController(), 'handle' ]
     )->name( 'user-details' );
 
-    $router->get(
+    Router::get(
         '/user/orders',
         [ new UserOrdersController(), 'handle' ]
     )->name( 'user-orders' );
 
-    $router->post(
+    Router::post(
         '/user/details',
         [ new UpdateUserDetailsController(), 'handle' ]
     )->name( 'update-details' );
 
-     $router->post(
+     Router::post(
         '/user/change',
         [ new ChangeUserPasswordController(), 'handle' ]
     )->name( 'change-password' );

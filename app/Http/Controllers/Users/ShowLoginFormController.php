@@ -22,8 +22,8 @@ namespace App\Http\Controllers\Users;
  * @use
  */
 use Exception;
-use Omega\Routing\Router;
-use Omega\View\View;
+use Omega\Support\Facades\Router;
+use Omega\Support\Facades\View;
 
 /**
  * Show register form controller.
@@ -42,14 +42,13 @@ class ShowLoginFormController
     /**
      * Handle the controller.
      *
-     * @param  Router $router Holds an instance of Router.
-     * @return View Return an instance of View.
+     * @return \Omega\View\View Return an instance of View.
      * @throws Exception
      */
-    public function handle( Router $router ) : View
+    public function handle() : \Omega\View\View
     {
-        return view( 'users/login', [
-            'logInAction'    => $router->route( 'log-in-user'   ),
+        return View::render( 'users/login', [
+            'logInAction'    => Router::route( 'log-in-user'   ),
             'csrf'           => csrf(),
         ]);
     }

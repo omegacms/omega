@@ -24,8 +24,8 @@ namespace App\Http\Controllers\Users;
 use Exception;
 use function password_verify;
 use function password_hash;
-use Omega\View\View;
 use App\Models\User;
+use Omega\Support\Facades\View;
 
 /**
  * User change password controller.
@@ -44,10 +44,10 @@ class ChangeUserPasswordController
     /**
      * Handle the controller.
      *
-     * @return View Return an instance of View.
+     * @return \Omega\View\View Return an instance of View.
      * @throws Exception
      */
-    public function handle() : View
+    public function handle() : \Omega\View\View
     {
         session();
         secure();
@@ -71,6 +71,6 @@ class ChangeUserPasswordController
             $user->save();
         }
 
-        return view( 'users/dashboard' );
+        return View::render( 'users/dashboard' );
     }
 }

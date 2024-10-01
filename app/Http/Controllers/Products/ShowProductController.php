@@ -23,8 +23,8 @@ namespace App\Http\Controllers\Products;
  */
 use Exception;
 use App\Models\Product;
-use Omega\Routing\Router;
-use Omega\View\View;
+use Omega\Support\Facades\Router;
+use Omega\Support\Facades\View;
 
 /**
  * Show product controller.
@@ -43,18 +43,17 @@ class ShowProductController
     /**
      * Handle the controller.
      *
-     * @param  Router $router Holds an instance of Router.
-     * @return View Return an instance of View.
+     * @return \Omega\View\View Return an instance of View.
      * @throws Exception
      */
-    public function handle( Router $router ) : View
+    public function handle() : \Omega\View\View
     {
-        $parameters = $router->getCurrent()->getParameters();
+        $parameters = Router::getCurrent()->getParameters();
         $product    = Product::find( (int) $parameters[ 'product' ] );
 
-        return view('products/view', [
+        return View::render( 'products/view', [
             'product'     => $product,
-            'orderAction' => $router->route('order-product', [
+            'orderAction' => Router::route('order-product', [
                 'product'    => $product->id,
             ] ),
             'csrf'        => csrf(),

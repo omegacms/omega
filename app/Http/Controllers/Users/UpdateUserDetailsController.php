@@ -23,7 +23,7 @@ namespace App\Http\Controllers\Users;
  */
 use Exception;
 use App\Models\User;
-use Omega\View\View;
+use Omega\Support\Facades\View;
 
 /**
  * Update details controller.
@@ -42,10 +42,10 @@ class UpdateUserDetailsController
     /**
      * Handle the controller.
      *
-     * @return View Return an instance of View.
+     * @return \Omega\View\View Return an instance of View.
      * @throws Exception
      */
-    public function handle() : View
+    public function handle() : \Omega\View\View
     {
         session();
         secure();
@@ -62,6 +62,6 @@ class UpdateUserDetailsController
         $user->address2 = $data[ 'address2' ];
         $user->save();
 
-        return view( 'users/dashboard' );
+        return View::render( 'users/dashboard' );
     }
 }

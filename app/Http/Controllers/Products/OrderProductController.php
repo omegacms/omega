@@ -23,7 +23,9 @@ namespace App\Http\Controllers\Products;
  */
 use Exception;
 use App\Models\Order;
-use Omega\Routing\Router;
+use Omega\Support\Facades\Response;
+use Omega\Support\Facades\Router;
+use Omega\Support\Facades\Session;
 
 /**
  * Order product controller.
@@ -42,16 +44,15 @@ class OrderProductController
     /**
      * Handler the controller.
      *
-     * @param  Router $router Holds an instance of Router.
-     * @return mixed
+     * @return \Omega\View\View
      * @throws Exception
      */
-    public function handle( Router $router ) : mixed
+    public function handle() : \Omega\View\View
     {
         secure();
 
         $data = [
-            'user_id'      => session( 'user_id' ),
+            'user_id'      => Session::get( 'user_id' ),
             'quantity'     => (int) $_POST[ 'quantity' ],
             'product_id'   => (int) $_POST[ 'product_id' ],
             'unit_price'   => (float)$_POST[ 'product_price' ] * (int) $_POST[ 'quantity' ],
@@ -66,9 +67,9 @@ class OrderProductController
 
         $orderId = $order->id;
 
-        session()->put( 'order_id', $orderId );
-        session()->put( 'ordered', true );
+        Session::put( 'order_id', $orderId );
+        Session::put( 'ordered', true );
 
-        return redirect( $router->route( 'show-order-summary-page' ) );
+        return Response::redirect( Router::route( 'show-order-summary-page' ) );
     }
 }

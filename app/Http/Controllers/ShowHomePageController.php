@@ -24,8 +24,10 @@ namespace App\Http\Controllers;
 use function array_map;
 use Exception;
 use App\Models\Product;
-use Omega\Routing\Router;
-use Omega\View\View;
+use Omega\Support\Facades\Cache;
+use Omega\Support\Facades\Router;
+use Omega\Support\Facades\Session;
+use Omega\Support\Facades\View;
 
 /**
  * Show home page controller class.
@@ -44,29 +46,27 @@ class ShowHomePageController
     /**
      * Handle the controller.
      *
-     * @param  Router $router Holds an instance of Router.
-     * @return View Return an instance of View.
+     * @return \Omega\View\View Return an instance of View.
      * @throws Exception
      */
-    public function handle( Router $router ) : View
+    public function handle() : \Omega\View\View
     {
-        $user_id            = session()->get( 'user_id' );
-        $cache              = app( 'cache' );
+        $user_id            = Session::get( 'user_id' );
         $products           = Product::all();
-        $productsWithRoutes = array_map( function ( $product ) use ( $cache, $router ) {
+        $productsWithRoutes = array_map( function ( $product ) {
             $key = "route-for-product-{$product->id}";
 
-            if ( ! $cache->has( $key ) ) {
-                $cache->put( $key, $router->route( 'view-product', [ 'product' => $product->id ] ) );
+            if ( ! Cache::has( $key ) ) {
+                Cache::put( $key, Router::route( 'view-product', [ 'product' => $product->id ] ) );
             }
 
-            $product->route = $cache->get($key);
+            $product->route = Cache::get($key);
 
             return $product;
 
         }, $products );
 
-        return view( 'home', [
+        return View::render( 'home', [
             'user_id'  => $user_id,
             'products' => $productsWithRoutes,
         ] );

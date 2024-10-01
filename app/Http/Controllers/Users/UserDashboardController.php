@@ -21,7 +21,7 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
-use Omega\View\View;
+use Omega\Support\Facades\View;
 
 /**
  * User dashboard controller.
@@ -40,12 +40,12 @@ class UserDashboardController
     /**
      * Handle the controller.
      *
-     * @return View
+     * @return \Omega\View\View
      */
-    public function handle() : View
+    public function handle() : \Omega\View\View
     {
         session();
         
-        return view( '/users/dashboard' );
+        return View::render( '/users/dashboard' );
     }
 }

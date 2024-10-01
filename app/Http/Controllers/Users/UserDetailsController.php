@@ -21,9 +21,10 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
-use Omega\Routing\Router;
-use Omega\View\View;
 use App\Models\User;
+use Omega\Support\Facades\Router;
+use Omega\Support\Facades\Session;
+use Omega\Support\Facades\View;
 
 /**
  * User details controller.
@@ -39,15 +40,15 @@ use App\Models\User;
  */
 class UserDetailsController
 {
-    public function handle( Router $router ) : View
+    public function handle() : \Omega\View\View
     {
-        $user_id = session()->get( 'user_id' );
+        $user_id = Session::get( 'user_id' );
         $user    = User::where( 'id', $user_id )->first();
 
-        return view( 'users/details', [ 
+        return View::render( 'users/details', [ 
             'user'                 => $user,
-            'updateDetailsAction'  => $router->route( 'update-details' ),
-            'changePasswordAction' => $router->route( 'change-password' ),
+            'updateDetailsAction'  => Router::route( 'update-details' ),
+            'changePasswordAction' => Router::route( 'change-password' ),
             'csrf'                 => csrf()
         ] );
     }
