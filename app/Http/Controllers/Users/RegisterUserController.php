@@ -24,10 +24,10 @@ namespace App\Http\Controllers\Users;
 use Exception;
 use function password_hash;
 use App\Models\User;
-use Omega\Support\Facades\Session;
-use Omega\Support\Facades\Response;
-use Omega\Support\Facades\Router;
-use Omega\Support\Facades\Validation;
+use Omega\Support\Facade\Facades\Session;
+use Omega\Support\Facade\Facades\Response;
+use Omega\Support\Facade\Facades\Router;
+use Omega\Support\Facade\Facades\Validation;
 
 /**
  * Register user controller.

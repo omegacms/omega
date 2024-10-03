@@ -21,7 +21,7 @@ namespace App\Http\Controllers\Users;
 /**
  * @use
  */
-use Omega\Support\Facades\View;
+use Omega\Support\Facade\Facades\View;
 
 /**
  * User dashboard controller.

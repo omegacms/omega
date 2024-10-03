@@ -23,7 +23,7 @@ namespace App\Http\Controllers\Products;
  */
 use Exception;
 use App\Models\Order;
-use Omega\Support\Facades\View;
+use Omega\Support\Facade\Facades\View;
 
 /**
  * Delete product controller class.

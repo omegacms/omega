@@ -25,7 +25,7 @@ use Exception;
 use function password_verify;
 use function password_hash;
 use App\Models\User;
-use Omega\Support\Facades\View;
+use Omega\Support\Facade\Facades\View;
 
 /**
  * User change password controller.

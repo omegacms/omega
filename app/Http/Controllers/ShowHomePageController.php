@@ -24,10 +24,10 @@ namespace App\Http\Controllers;
 use function array_map;
 use Exception;
 use App\Models\Product;
-use Omega\Support\Facades\Cache;
-use Omega\Support\Facades\Router;
-use Omega\Support\Facades\Session;
-use Omega\Support\Facades\View;
+use Omega\Support\Facade\Facades\Cache;
+use Omega\Support\Facade\Facades\Router;
+use Omega\Support\Facade\Facades\Session;
+use Omega\Support\Facade\Facades\View;
 
 /**
  * Show home page controller class.

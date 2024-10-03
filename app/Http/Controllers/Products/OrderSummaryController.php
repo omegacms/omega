@@ -24,9 +24,9 @@ namespace App\Http\Controllers\Products;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
-use Omega\Support\Facades\Router;
-use Omega\Support\Facades\Session;
-use Omega\Support\Facades\View;
+use Omega\Support\Facade\Facades\Router;
+use Omega\Support\Facade\Facades\Session;
+use Omega\Support\Facade\Facades\View;
 /**
  * Order summary controller class.
  *

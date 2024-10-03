@@ -22,9 +22,9 @@ namespace App\Http\Controllers\Users;
  * @use
  */
 use Exception;
-use Omega\Support\Facades\Response;
-use Omega\Support\Facades\Router;
-use Omega\Support\Facades\Session;
+use Omega\Support\Facade\Facades\Response;
+use Omega\Support\Facade\Facades\Router;
+use Omega\Support\Facade\Facades\Session;
 
 /**
  * Logout user controller.

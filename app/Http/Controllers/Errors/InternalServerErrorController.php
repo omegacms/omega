@@ -21,7 +21,7 @@ namespace App\Http\Controllers\Errors;
 /**
  * @use
  */
-use Omega\Support\Facades\View;
+use Omega\Support\Facade\Facades\View;
 
 /**
  * Error 500 controller.

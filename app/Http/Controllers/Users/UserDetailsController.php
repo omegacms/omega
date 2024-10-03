@@ -22,9 +22,9 @@ namespace App\Http\Controllers\Users;
  * @use
  */
 use App\Models\User;
-use Omega\Support\Facades\Router;
-use Omega\Support\Facades\Session;
-use Omega\Support\Facades\View;
+use Omega\Support\Facade\Facades\Router;
+use Omega\Support\Facade\Facades\Session;
+use Omega\Support\Facade\Facades\View;
 
 /**
  * User details controller.

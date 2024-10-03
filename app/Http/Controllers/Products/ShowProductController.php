@@ -23,8 +23,8 @@ namespace App\Http\Controllers\Products;
  */
 use Exception;
 use App\Models\Product;
-use Omega\Support\Facades\Router;
-use Omega\Support\Facades\View;
+use Omega\Support\Facade\Facades\Router;
+use Omega\Support\Facade\Facades\View;
 
 /**
  * Show product controller.

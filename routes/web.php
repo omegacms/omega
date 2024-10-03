@@ -35,7 +35,7 @@ use App\Http\Controllers\Users\UserOrdersController;
 use App\Http\Controllers\Errors\ResponseNotAllowedController;
 use App\Http\Controllers\Errors\PageNotFoundController;
 use App\Http\Controllers\Errors\InternalServerErrorController;
-use Omega\Support\Facades\Router;
+use Omega\Support\Facade\Facades\Router;
 
 /**
  * Return an array of route path.

@@ -23,9 +23,9 @@ namespace App\Http\Controllers\Products;
  */
 use Exception;
 use App\Models\Order;
-use Omega\Support\Facades\Response;
-use Omega\Support\Facades\Router;
-use Omega\Support\Facades\Session;
+use Omega\Support\Facade\Facades\Response;
+use Omega\Support\Facade\Facades\Router;
+use Omega\Support\Facade\Facades\Session;
 
 /**
  * Order product controller.

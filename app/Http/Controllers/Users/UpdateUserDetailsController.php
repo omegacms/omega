@@ -23,7 +23,7 @@ namespace App\Http\Controllers\Users;
  */
 use Exception;
 use App\Models\User;
-use Omega\Support\Facades\View;
+use Omega\Support\Facade\Facades\View;
 
 /**
  * Update details controller.

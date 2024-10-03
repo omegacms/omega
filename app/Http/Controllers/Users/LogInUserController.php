@@ -24,10 +24,10 @@ namespace App\Http\Controllers\Users;
 use Exception;
 use function password_verify;
 use App\Models\User;
-use Omega\Support\Facades\Response;
-use Omega\Support\Facades\Router;
-use Omega\Support\Facades\Session;
-use Omega\Support\Facades\Validation;
+use Omega\Support\Facade\Facades\Response;
+use Omega\Support\Facade\Facades\Router;
+use Omega\Support\Facade\Facades\Session;
+use Omega\Support\Facade\Facades\Validation;
 
 /**
  * Login user controller.
@@ -49,11 +49,11 @@ class LogInUserController
      * @return \Omega\View\View
      * @throws Exception
      */
-    public function handle()
+    public function handle() : \Omega\View\View
     {
         secure();
-
-        $data = Validation::validate($_POST, [
+    
+        $data = Validation::validate( $_POST, [
             'email'    => [ 'required', 'email'  ],
             'password' => [ 'required', 'min:10' ],
         ], 'login_errors' );

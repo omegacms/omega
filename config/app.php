@@ -48,17 +48,17 @@ return [
 	 * Array of facades class.
 	 */
 	'facades'   => [
-        'Config'     => \Omega\Support\Facades\Config::class,
-        'Cache'      => \Omega\Support\Facades\Cache::class,
-        'Database'   => \Omega\Support\Facades\Database::class,
-        //'Email'      => \Omega\Support\Facades\Email::class,
-        //'Filesystem' => \Omega\Support\Facades\Filesystem::class,
-        //'Logging'    => \Omega\Support\Facades\Logging::class,
-        'Queue'      => \Omega\Support\Facades\Queue::class,
-        'Response'   => \Omega\Support\Facades\Response::class,
-        'Router'     => \Omega\Support\Facades\Router::class,
-        'Session'    => \Omega\Support\Facades\Session::class,
-        'Validation' => \Omega\Support\Facades\Validation::class,
-        'View'       => \Omega\Support\Facades\View::class
+        'Config'     => \Omega\Support\Facade\Facades\Config::class,
+        'Cache'      => \Omega\Support\Facade\Facades\Cache::class,
+        'Database'   => \Omega\Support\Facade\Facades\Database::class,
+        //'Email'      => \Omega\Support\Facade\Facades\Email::class,
+        //'Filesystem' => \Omega\Support\Facade\Facades\Filesystem::class,
+        //'Logging'    => \Omega\Support\Facade\Facades\Logging::class,
+        'Queue'      => \Omega\Support\Facade\Facades\Queue::class,
+        'Response'   => \Omega\Support\Facade\Facades\Response::class,
+        'Router'     => \Omega\Support\Facade\Facades\Router::class,
+        'Session'    => \Omega\Support\Facade\Facades\Session::class,
+        'Validator'  => \Omega\Support\Facade\Facades\Validation::class,
+        'View'       => \Omega\Support\Facade\Facades\View::class
     ],
 ];
