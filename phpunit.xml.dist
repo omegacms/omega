@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<phpunit 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="phpunit.xsd"
+    bootstrap="tests/bootstrap.php"
+	cacheDirectory=".phpunit.cache/"
+	cacheResult="true"
+    executionOrder="depends,defects"
+	defaultTestSuite="OmegaCMS Test Suite"
+    beStrictAboutOutputDuringTests="true"
+	failOnRisky="true"
+    failOnWarning="true"
+	testdox="true"
+	testdoxSummary="true"
+	colors="true"
+	>
+ 	<testsuites>
+ 		<testsuite name="OmegaCMS Test Suite">
+      		<directory>tests</directory>
+			<directory>vendor/omegacms/*/tests</directory>
+      	</testsuite>
+  	</testsuites>
+	<source>
+		<include>
+			<directory suffix=".php">app</directory>
+			<directory suffix=".php">vendor/omegacms/*/src</directory>
+		</include>
+	</source>
+    <coverage 
+		includeUncoveredFiles="true"
+		pathCoverage="true"
+		>
+		<report>
+			<html outputDirectory="coverage-report" lowUpperBound="50" highLowerBound="90"/>
+		</report>
+	</coverage>
+	<logging>
+    	<testdoxHtml outputFile="coverage-report/testdox.html"/>
+	</logging>
+</phpunit>

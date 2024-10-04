@@ -8,4 +8,5 @@ package-lock.json
 database/sqlite/database.sqlite
 php_errors.log
 report.txt
-omega.code-workspace
+phpunit.xml
+phpstan.neon
