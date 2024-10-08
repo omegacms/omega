@@ -22,19 +22,12 @@
       "symfony/console": "^7.1"
     },
     "require-dev": {
-        "filp/whoops": "^2.15",
-        "phpstan/phpstan": "^1.12",
-        "phpunit/phpunit": "^11.3"
+        "filp/whoops": "^2.15"
     },
     "autoload": {
       "psr-4": {
         "App\\": "app/"
       }
-    },
-    "autoload-dev": {
-	  "psr-4": {
-	    "Tests\\": "test/"
-	  }
     },
     "scripts": {
       "serve": "php omega serve",
