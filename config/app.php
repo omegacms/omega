@@ -53,7 +53,7 @@ return [
         'Database'   => \Omega\Support\Facade\Facades\Database::class,
         //'Email'      => \Omega\Support\Facade\Facades\Email::class,
         //'Filesystem' => \Omega\Support\Facade\Facades\Filesystem::class,
-        'Logging'    => \Omega\Support\Facade\Facades\Logging::class,
+        'Logger'     => \Omega\Support\Facade\Facades\Logger::class,
         'Queue'      => \Omega\Support\Facade\Facades\Queue::class,
         'Response'   => \Omega\Support\Facade\Facades\Response::class,
         'Router'     => \Omega\Support\Facade\Facades\Router::class,
