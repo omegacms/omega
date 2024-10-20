@@ -1,6 +1,6 @@
 <?php
 /**
- * Omega Application - config/nfiguration file.
+ * Omega Application - config/app file.
  *
  * @link       https://omegacms.github.io
  * @author     Adriano Giovannini <omegacms@outlook.com>
@@ -12,6 +12,32 @@
  * @declare
  */
 declare( strict_types = 1 );
+
+/**
+ * @use
+ */
+use Omega\Config\ServiceProvider\ConfigServiceProvider;
+use Omega\Cache\ServiceProvider\CacheServiceProvider;
+use Omega\Database\ServiceProvider\DatabaseServiceProvider;
+use Omega\Filesystem\ServiceProvider\FilesystemServiceProvider;
+use Omega\Http\ServiceProvider\ResponseServiceProvider;
+use Omega\Logging\ServiceProvider\LoggingServiceProvider;
+use Omega\Queue\ServiceProvider\QueueServiceProvider;
+use Omega\Routing\ServiceProvider\RouterServiceProvider;
+use Omega\Session\ServiceProvider\SessionServiceProvider;
+use Omega\Validation\ServiceProvider\ValidationServiceProvider;
+use Omega\View\ServiceProvider\ViewServiceProvider;
+use Omega\Support\Facade\Facades\Cache;
+use Omega\Support\Facade\Facades\Config;
+use Omega\Support\Facade\Facades\Database;
+use Omega\Support\Facade\Facades\Filesystem;
+use Omega\Support\Facade\Facades\Logger;
+use Omega\Support\Facade\Facades\Queue;
+use Omega\Support\Facade\Facades\Response;
+use Omega\Support\Facade\Facades\Router;
+use Omega\Support\Facade\Facades\Session;
+use Omega\Support\Facade\Facades\Validation;
+use Omega\Support\Facade\Facades\View;
 
 /**
  * Return an array with common application parameters.
@@ -30,35 +56,35 @@ return [
 	 * Array of ServiceProviders.
 	 */
 	'providers' => [
-        \Omega\Config\ServiceProvider\ConfigServiceProvider::class,
-        \Omega\Cache\ServiceProvider\CacheServiceProvider::class,
-        \Omega\Database\ServiceProvider\DatabaseServiceProvider::class,
+        ConfigServiceProvider::class,
+        CacheServiceProvider::class,
+        DatabaseServiceProvider::class,
         //\Omega\Email\ServiceProvider\EmailServiceProvider::class,
-        //\Omega\Filesystem\ServiceProvider\FilesystemServiceProvider::class,
-        \Omega\Logging\ServiceProvider\LoggingServiceProvider::class,
-        \Omega\Queue\ServiceProvider\QueueServiceProvider::class,
-        \Omega\Http\ServiceProvider\ResponseServiceProvider::class,
-        \Omega\Routing\ServiceProvider\RouterServiceProvider::class,
-        \Omega\Session\ServiceProvider\SessionServiceProvider::class,
-        \Omega\Validation\ServiceProvider\ValidationServiceProvider::class,
-        \Omega\View\ServiceProvider\ViewServiceProvider::class,
+        FilesystemServiceProvider::class,
+        LoggingServiceProvider::class,
+        QueueServiceProvider::class,
+        ResponseServiceProvider::class,
+        RouterServiceProvider::class,
+        SessionServiceProvider::class,
+        ValidationServiceProvider::class,
+        ViewServiceProvider::class,
     ],
 
 	/**
 	 * Array of facades class.
 	 */
 	'facades'   => [
-        'Config'     => \Omega\Support\Facade\Facades\Config::class,
-        'Cache'      => \Omega\Support\Facade\Facades\Cache::class,
-        'Database'   => \Omega\Support\Facade\Facades\Database::class,
+        'Config'     => Config::class,
+        'Cache'      => Cache::class,
+        'Database'   => Database::class,
         //'Email'      => \Omega\Support\Facade\Facades\Email::class,
-        //'Filesystem' => \Omega\Support\Facade\Facades\Filesystem::class,
-        'Logger'     => \Omega\Support\Facade\Facades\Logger::class,
-        'Queue'      => \Omega\Support\Facade\Facades\Queue::class,
-        'Response'   => \Omega\Support\Facade\Facades\Response::class,
-        'Router'     => \Omega\Support\Facade\Facades\Router::class,
-        'Session'    => \Omega\Support\Facade\Facades\Session::class,
-        'Validator'  => \Omega\Support\Facade\Facades\Validation::class,
-        'View'       => \Omega\Support\Facade\Facades\View::class
+        'Filesystem' => Filesystem::class,
+        'Logger'     => Logger::class,
+        'Queue'      => Queue::class,
+        'Response'   => Response::class,
+        'Router'     => Router::class,
+        'Session'    => Session::class,
+        'Validator'  => Validation::class,
+        'View'       => View::class
     ],
 ];
